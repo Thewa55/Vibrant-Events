@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+<style>
+    body {
+        font-family: 'Open Sans', GillSans, Arial;
+    }
+
+    .logo {
+        position: absolute;
+        top: 13px;
+        left: 23px;
+        background-color: black;
+    }
+
+    .menuItem {
+        float: right;
+        vertical-align: middle;
+        line-height: 90px;
+        padding-right: 10px;
+        padding-left: 20px;
+        font-size: 18px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        letter-spacing: normal;
+        text-align: right;
+        height: 21px;
+    }
+
+    .vewMap {
+        color: #b63073;
+    }
+
+    .vewSchedule {
+        color: #129eaf;
+    }
+
+    .photoGallery {
+        color: #5c379b;
+    }
+
+    .headerBanner {
+        background-color: #b63073;
+        background-image: url("assets/images/AccordionTexture.png");
+        background-repeat: no-repeat;
+        background-position: 162px center;
+
+        margin-right: 43px;
+        position: relative;
+        top: 0px;
+        height:487px;
+        color: white;
+        padding-left: 442px;
+    }
+
+    .headerBanner h1 {
+        padding-top: 70px;
+        padding-bottom: 43px;
+    }
+
+    .bannerImage {
+        position: absolute;
+        top: 95px;
+        left: 42px;
+        width: 362px;
+        height: 534px;
+    }
+
+    .eventSchedule {
+        padding-left: 42px;
+    }
+
+    .eventSchedule h1 {
+        font-size: 24px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #5c379b;
+        width: 449px;
+        border-bottom: solid 1px #5c379b;
+    }
+
+    .eventGroup {
+        flex-direction: row;
+        display: flex;
+        text-align: center;
+        color: #525252;
+        height: 500px;
+    }
+
+    .eventSection {
+        width: 33%;
+        min-width: 300px;
+        text-align:left;
+    }
+
+    .eventContent {
+        width: 300px;
+        height: 100%;
+    }
+
+    .eventSection img {
+        width: 300px;
+        height: 160px;
+    }
+
+    .eventSection h1 {
+        font-size: 19px;
+        font-weight: 600;
+    }
+
+    .eventButton {
+        width: 164px;
+        height: 46px;
+        margin: 50px 174px 0 42px;
+        padding: 12px 45px 12px 44px;
+        background-color: #129eaf;
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 18px;
+        border: none;
+    }
+
+</style>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div style="height:90px">
+        <img class="logo" width="71" height="65" />
+        <span class="menuItem vewMap">
+            <a>VIEW MAP</a>
+        </span>
+            <span class="menuItem vewSchedule">
+            <a>VIEW SCHEDULE</a>
+        </span>
+            <span class="menuItem photoGallery">
+            <a>PHOTO GALLERY</a>
+        </span>
+    </div>
+    <div style="height:534px;">
+        <div class="headerBanner" >
+            <h1>Festival of Color Events</h1>
+            <h2>History</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec ante fermentum, volutpat dolor eget, sodales odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis odio eu nisi rutrum consequat. Donec ut nunc augue. Aliquam erat volutpat. Suspendisse in sem non nulla accumsan lacinia quis eu turpis. Curabitur non ligula nisi. Maecenas magna ligula, sodales vitae maximus vel, faucibus et arcu. Duis id enim tortor. Nam non urna in sapien pretium iaculis at vel libero. Fusce massa ante, ornare in elit.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec ante fermentum, volutpat dolor eget, sodales odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <img class="bannerImage" src="assets/images/EventsBannerImage.jpg"/>
+    </div>
+
+    <div class="eventSchedule">
+        <h1>2021 Event Schedule</h1>
+
+        <div class="eventGroup">
+            <div class="eventSection">
+                <div class="eventContent">
+                    <img src="assets/images/EventsImage.jpg" />
+                    <h2>First Title of Event Area</h2>
+                    <p>Edison, NJ</p>
+                    <span>Saturday, March 27 2021<br>10:00am to 10:00pm</span>
+                    <br />
+                    <br />
+                    <button class="eventButton" >DETAILS</button>
+                </div>
+            </div>
+            <div class="eventSection">
+                <div class="eventContent">
+                    <img src="assets/images/EventsImage2.jpg" />
+                    <h2>Second Title of Event Area</h2>
+                    <p>Linden, NJ</p>
+                    <span>Saturday, March 27 2021<br>10:00am to 10:00pm</span>
+                    <br />
+                    <br />
+                    <button class="eventButton" >DETAILS</button>
+                </div>
+            </div>
+            <div class="eventSection">
+                <div class="eventContent">
+                    <img src="assets/images/EventsImage3.jpg" />
+                    <h2>Third Title of Event Area</h2>
+                    <p>Woodbridge, NJ</p>
+                    <span>Saturday, March 27 2021<br>10:00am to 10:00pm</span>
+                    <button class="eventButton" >DETAILS</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

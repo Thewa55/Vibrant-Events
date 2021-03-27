@@ -5,6 +5,19 @@
 let map, infoWindow;
 let loadedMarkers = [];
 
+const markers = [
+    {
+        "lat": 40.6253422819969,
+        "lng": -74.24640370742502,
+        "image": "../assets/images/Legend_Present.png"
+    },
+    {
+        "lat": 40.6273422819969,
+        "lng": -74.24940370742502,
+        "image": "../assets/images/Legend_Present.png"
+    }
+];
+
 function initMap() {
     map = new google.maps.Map(document.getElementById("map"), {
         zoom: 16.7,
@@ -12,12 +25,17 @@ function initMap() {
         center: { lat: 40.6253422819969, lng: -74.24640370742502 },
         mapTypeId: "roadmap",
     });
+
+
+    //40.622808462797984, -74.2494304586045
     const bounds = new google.maps.LatLngBounds(
-        new google.maps.LatLng(62.281819, -150.287132),
-        new google.maps.LatLng(62.400471, -150.005608)
+        new google.maps.LatLng(40.62289089686685, -74.24958816174413), //South West
+        new google.maps.LatLng(40.62726177970077, -74.24345641746564) //North East
     );
+
+
     // The photograph is courtesy of the U.S. Geological Survey.
-    let image = "Images/Map.jpg";
+    let image = "../assets/images/MapOverlay.png";
 
     /**
      * The custom overlay object contains the USGS image,
@@ -168,28 +186,14 @@ function initMap() {
     setupLegends();
 }
 
-const markers = [
-    {
-        "lat": 40.6253422819969,
-        "lng": -74.24640370742502,
-        "image": "../assets/images/Legend_Present.png"
-    },
-    {
-        "lat": 40.6273422819969,
-        "lng": -74.24940370742502,
-        "image": "../assets/images/Legend_Present.png"
-    }
-];
-
 
 function setupLegends() {
-
     markers.forEach(function(value, index, array){
         loadedMarkers.push(
             new google.maps.Marker({
                 position: { lat: value.lat, lng: value.lng },
                 map,
-                icon: value.iamge
+                icon: value.image
             })
         );
     });
