@@ -5,5 +5,10 @@ $(document).ready(() => {
         location.href = "./assets/Events.html"
     })
 
+    $(".select").on("click", () => {
+        let location = $(".form-select")
+        console.log(location)
+
+    })
 
 })
