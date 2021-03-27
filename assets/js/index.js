@@ -6,9 +6,8 @@ $(document).ready(() => {
     })
 
     $(".select").on("click", () => {
-        let location = $(".form-select")
-        console.log(location)
-
+        let dropDown = $(".form-select :selected").val();
+        console.log(dropDown)
     })
 
 })
