@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+        }
+
+        .overlay {
+            height: 0%;
+            width: 70%;
+            position: fixed;
+            z-index: 1;
+            bottom: 0;
+            left: 0;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0, 0.9);
+            overflow-y: hidden;
+            transition: 0.5s;
+        }
+
+        .overlay-content {
+            position: relative;
+            top: 25%;
+            width: 100%;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .overlay a {
+            padding: 8px;
+            text-decoration: none;
+            font-size: 36px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .overlay a:hover, .overlay a:focus {
+            color: #f1f1f1;
+        }
+
+        .overlay .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 45px;
+            font-size: 60px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .overlay {overflow-y: auto;}
+            .overlay a {font-size: 20px}
+            .overlay .closebtn {
+                font-size: 40px;
+                top: 15px;
+                right: 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="overlay-content">
+        <a href="#">Holi</a>
+        <p style="font-size:12px; color: white"> Holi is a popular ancient Hindu festival, also known as the "festival of love", the "festival of colours", and the "festival of spring". The festival celebrates the eternal and divine love of Radha and Krishna. It also signifies the triumph of good over evil. It originated and is predominantly celebrated in India, but has also spread to other regions of Asia and parts of the Western world through the diaspora from the Indian subcontinent. </p>
+    </div>
+</div>
+<div id="SchNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeSchNav()">&times;</a>
+    <div class="overlay-content">
+        <a href="#">Holi Dates</a>
+        <p style="font-size:12px; color: white"> Sunday
+            , March 28<br />Monday
+            , March 29 </p>
+    </div>
+</div>
+
+<h2 style="text-align: center">Event Inforamtion</h2>
+<p></p>
+<p></p>
+<p style="font-size:30px;cursor:pointer;text-align:right" onclick="openNav()">&#x2B24; Event Information</p>
+<p style="font-size:30px;cursor:pointer;text-align:right" onclick="openSchNav()">&#x2B24; Schedule</p>
+<p style="font-size:30px;cursor:pointer;text-align:right" onclick="openNav()">&#x2B24; To Map Page</p>
+
+<script>
+    function openNav() {
+        document.getElementById("myNav").style.height = "100%";
+    }
+
+    function closeNav() {
+        document.getElementById("myNav").style.height = "0%";
+    }
+    function openSchNav() {
+        document.getElementById("SchNav").style.height = "100%";
+    }
+
+    function closeSchNav() {
+        document.getElementById("SchNav").style.height = "0%";
+    }
+</script>
+
+</body>
+</html>
