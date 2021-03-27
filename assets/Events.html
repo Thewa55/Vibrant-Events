@@ -7,8 +7,9 @@
             font-family: 'Lato', sans-serif;
         }
 
+
         .overlay {
-            height: 0%;
+            height: 0;
             width: 70%;
             position: fixed;
             z-index: 1;
@@ -58,9 +59,18 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-
+<div class="jumbotron jumbotron-fluid hero">
+    <div class="container ">
+        <div class="row justify-content-end">
+            <div class="col-1 pt-3">
+                <img class="logo" src="images/V logo.png"><br>
+            </div>
+        </div>
+    </div>
+</div>
 <div id="myNav" class="overlay">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <div class="overlay-content">
@@ -78,7 +88,8 @@
     </div>
 </div>
 
-<h2 style="text-align: center">Event Inforamtion</h2>
+
+<h2 style="text-align: center">Event Information</h2>
 <p></p>
 <p></p>
 <p style="font-size:30px;cursor:pointer;text-align:right" onclick="openNav()">&#x2B24; Event Information</p>
@@ -87,14 +98,14 @@
 
 <script>
     function openNav() {
-        document.getElementById("myNav").style.height = "100%";
+        document.getElementById("myNav").style.height = "90%";
     }
 
     function closeNav() {
         document.getElementById("myNav").style.height = "0%";
     }
     function openSchNav() {
-        document.getElementById("SchNav").style.height = "100%";
+        document.getElementById("SchNav").style.height = "90%";
     }
 
     function closeSchNav() {
