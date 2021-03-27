@@ -15,3 +15,9 @@
     width: 5em;
     float: right;
 }
+body {
+  background-color: black;
+}
+p {
+  color: silver;
+}
