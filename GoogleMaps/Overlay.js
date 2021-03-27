@@ -3,6 +3,7 @@
 // overlay to or from the map.
 
 let map, infoWindow;
+let loadedMarkers = [];
 
 function initMap() {
     map = new google.maps.Map(document.getElementById("map"), {
@@ -164,6 +165,7 @@ function initMap() {
         infoWindow.open(map);
     }
 
+    setupLegends();
 }
 
 const markers = [
@@ -179,23 +181,15 @@ const markers = [
     }
 ];
 
-let loadedMarkers = [];
 
 function setupLegends() {
-    const image =
-        "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
-    const beachMarker = new google.maps.Marker({
-        position: { lat: -33.89, lng: 151.274 },
-        map,
-        icon: image,
-    });
 
     markers.forEach(function(value, index, array){
         loadedMarkers.push(
             new google.maps.Marker({
-                position: { lat: -33.89, lng: 151.274 },
+                position: { lat: value.lat, lng: value.lng },
                 map,
-                icon: image,
+                icon: value.iamge
             })
         );
     });
