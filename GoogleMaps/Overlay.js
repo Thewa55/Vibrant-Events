@@ -179,9 +179,7 @@ const markers = [
     }
 ];
 
-function addLegend() {
-
-}
+let loadedMarkers = [];
 
 function setupLegends() {
     const image =
@@ -192,6 +190,14 @@ function setupLegends() {
         icon: image,
     });
 
-    for (let v_nr = 0l; v_nr <)
+    markers.forEach(function(value, index, array){
+        loadedMarkers.push(
+            new google.maps.Marker({
+                position: { lat: -33.89, lng: 151.274 },
+                map,
+                icon: image,
+            })
+        );
+    });
 
 }
