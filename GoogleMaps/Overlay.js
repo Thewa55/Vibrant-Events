@@ -233,26 +233,23 @@ function initMap() {
     locationButton.addEventListener("click", () => {
         // Try HTML5 geolocation.
         if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-            (position) => {
-            const pos = {
-                lat: position.coords.latitude,
-                lng: position.coords.longitude,
-            };
+            navigator.geolocation.getCurrentPosition(handleLocationSuccess, handleLocationError);
+        }
+        else {
+            infoWindow.setContent("Geolocation is not supported.");
+        }
+    });
+
+    function handleLocationSuccess(position){
+        const pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+        };
         infoWindow.setPosition(pos);
         infoWindow.setContent("Location found.");
         infoWindow.open(map);
         map.setCenter(pos);
-    },
-        () => {
-            handleLocationError(true, infoWindow, map.getCenter());
-        }
-    );
-    } else {
-        // Browser doesn't support Geolocation
-        handleLocationError(false, infoWindow, map.getCenter());
     }
-    });
 
     function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
