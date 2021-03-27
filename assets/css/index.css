@@ -1,6 +1,4 @@
 .hero {
-    /* background-image: url("../images/Holi.jpg"); */
-
     background-image:
     linear-gradient(
       rgba(0, 0, 0, 0.5),
@@ -11,4 +9,10 @@
     -o-background-size: cover;
     background-size: cover;
     z-index: -1; 
+    height: fit-content;
+}
+.logo {
+    width: 5em;
+    padding-right: 0px;
+    float: right;
 }
