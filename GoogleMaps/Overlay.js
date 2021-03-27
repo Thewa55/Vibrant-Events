@@ -7,8 +7,9 @@ let map, infoWindow;
 function initMap() {
     map = new google.maps.Map(document.getElementById("map"), {
         zoom: 11,
-        center: { lat: 62.323907, lng: -150.109291 },
-        mapTypeId: "satellite",
+        //40.6253422819969, -74.24640370742502
+        center: { lat: 40.6253422819969, lng: -74.24640370742502 },
+        mapTypeId: "roadmap ",
     });
     const bounds = new google.maps.LatLngBounds(
         new google.maps.LatLng(62.281819, -150.287132),
@@ -18,10 +19,10 @@ function initMap() {
     let image = "Images/Map.jpg";
 
     /**
-     * The custom USGSOverlay object contains the USGS image,
+     * The custom overlay object contains the USGS image,
      * the bounds of the image, and a reference to the map.
      */
-    class USGSOverlay extends google.maps.OverlayView {
+    class EventOverlay extends google.maps.OverlayView {
         constructor(bounds, image) {
             super();
             this.bounds = bounds;
@@ -110,7 +111,7 @@ function initMap() {
             }
         }
     }
-    const overlay = new USGSOverlay(bounds, image);
+    const overlay = new EventOverlay(bounds, image);
     overlay.setMap(map);
     const toggleButton = document.createElement("button");
     toggleButton.textContent = "Toggle";
@@ -161,3 +162,5 @@ else {
     }
 
 }
+
+
