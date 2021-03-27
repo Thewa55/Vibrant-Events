@@ -112,7 +112,7 @@ function initMap() {
         new google.maps.LatLng(62.400471, -150.005608)
     );
     // The photograph is courtesy of the U.S. Geological Survey.
-    let image = "../Images/Map.jpg";
+    let image = "Images/Map.jpg";
 
     /**
      * The custom USGSOverlay object contains the USGS image,
