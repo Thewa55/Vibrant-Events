@@ -1,4 +1,4 @@
-.hero {
+/* .hero {
     background-image:
     linear-gradient(
       rgba(0, 0, 0, 0.5),
@@ -10,14 +10,47 @@
     background-size: cover;
     z-index: -1; 
     height: fit-content;
-}
+} */
 .logo {
-    width: 5em;
+    /* width: 5em; */
+    width: 71px; 
     float: right;
 }
-body {
+/* body {
   background-color: black;
-}
+} */
 p {
   color: silver;
+}
+.nav-item {
+  font-family: GillSans !important;
+  font-size: 18px !important;
+}
+.navPhoto{
+  color: #5c379b !important;
+}
+.navSchedule{
+  color: #129eaf !important;
+}
+.navMap{
+  color: #b63073 !important;
+}
+.jumbotron{
+  background-color: #b63073;
+  height: 487px;
+  background-image: url("../images/floral-2746540_1280.svg");
+}
+.heroImg{
+  width: 362px;
+  height: 534px;
+  margin-top: -7vw;
+}
+.jumboTitle{
+  width: 400px;
+  height: 35px;
+  margin: 0 80px 92px 0;
+  font-family: GillSans;
+  font-size: 30px;
+  font-weight: bold;
+  color: #ffffff;
 }
