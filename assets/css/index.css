@@ -11,6 +11,9 @@
     z-index: -1; 
     height: fit-content;
 } */
+.header {
+  color: white;
+}
 .logo {
     /* width: 5em; */
     width: 71px; 
