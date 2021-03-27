@@ -6,10 +6,10 @@ let map, infoWindow;
 
 function initMap() {
     map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 11,
+        zoom: 16.7,
         //40.6253422819969, -74.24640370742502
         center: { lat: 40.6253422819969, lng: -74.24640370742502 },
-        mapTypeId: "roadmap ",
+        mapTypeId: "roadmap",
     });
     const bounds = new google.maps.LatLngBounds(
         new google.maps.LatLng(62.281819, -150.287132),
@@ -116,14 +116,17 @@ function initMap() {
     const toggleButton = document.createElement("button");
     toggleButton.textContent = "Toggle";
     toggleButton.classList.add("custom-map-control-button");
+    toggleButton.addEventListener("click", () => {overlay.toggle(); });
+    map.controls[google.maps.ControlPosition.TOP_RIGHT].push(toggleButton);
+
+    /*
     const toggleDOMButton = document.createElement("button");
     toggleDOMButton.textContent = "Toggle DOM Attachment";
     toggleDOMButton.classList.add("custom-map-control-button");
-    toggleButton.addEventListener("click", () => {overlay.toggle(); });
-    toggleDOMButton.addEventListener("click", () => {overlay.toggleDOM(map);
-});
+
+    toggleDOMButton.addEventListener("click", () => {overlay.toggleDOM(map); });
     map.controls[google.maps.ControlPosition.TOP_RIGHT].push(toggleDOMButton);
-    map.controls[google.maps.ControlPosition.TOP_RIGHT].push(toggleButton);
+    */
 
     infoWindow = new google.maps.InfoWindow();
     const locationButton = document.createElement("button");
@@ -146,10 +149,10 @@ function initMap() {
     }
     , () => {handleLocationError(true, infoWindow, map.getCenter()); } );
     }
-else {
-        infoWindow.setContent("Geolocation is not supported.");
-    }
-});
+    else {
+            infoWindow.setContent("Geolocation is not supported.");
+        }
+    });
 
     function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
@@ -163,4 +166,32 @@ else {
 
 }
 
+const markers = [
+    {
+        "lat": 40.6253422819969,
+        "lng": -74.24640370742502,
+        "image": "../assets/images/Legend_Present.png"
+    },
+    {
+        "lat": 40.6273422819969,
+        "lng": -74.24940370742502,
+        "image": "../assets/images/Legend_Present.png"
+    }
+];
 
+function addLegend() {
+
+}
+
+function setupLegends() {
+    const image =
+        "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
+    const beachMarker = new google.maps.Marker({
+        position: { lat: -33.89, lng: 151.274 },
+        map,
+        icon: image,
+    });
+
+    for (let v_nr = 0l; v_nr <)
+
+}
