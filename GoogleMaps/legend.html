@@ -14,48 +14,49 @@
     <script type="text/javascript" src="Accordion/pana-accordion.js"></script>
     <script type="text/javascript" src="Overlay.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <style>
+        .overlay {
+            height: 0;
+            width: 30%;
+            position: fixed;
+            z-index: 1;
+            bottom: 0;
+            left: 0;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0, 0.9);
+            overflow-y: hidden;
+            transition: 0.5s;}
+        .overlay-content {
+            position: relative;
+            top: 5%;
+            width: 100%;
+            text-align: center;
+            margin-top: 30px;}
+        .overlay a {
+            padding: 8px;
+            text-decoration: none;
+            font-size: 36px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;}
+        .overlay a:hover, .overlay a:focus {
+            color: #f1f1f1;}
+        .overlay .closebtn {
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            font-size: 60px;}
+        @media screen and (max-height: 450px) {
+            .overlay {overflow-y: auto;}
+            .overlay a {font-size: 20px}
+            .overlay .closebtn {
+                font-size: 40px;
+                top: 15px;
+                right: 35px;}  }
+    </style>
 </head>
 <body>
-<style>
-    .overlay {
-    height: 0;
-    width: 25%;
-    position: fixed;
-    z-index: 1;
-    bottom: 0;
-    left: 0;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0, 0.9);
-    overflow-y: hidden;
-    transition: 0.5s;}
-.overlay-content {
-    position: relative;
-    top: 5%;
-    width: 100%;
-    text-align: center;
-    margin-top: 30px;}
-.overlay a {
-    padding: 8px;
-    text-decoration: none;
-    font-size: 36px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;}
-.overlay a:hover, .overlay a:focus {
-    color: #f1f1f1;}
-.overlay .closebtn {
-    position: absolute;
-    top: 20px;
-    right: 45px;
-    font-size: 60px;}
-@media screen and (max-height: 450px) {
-    .overlay {overflow-y: auto;}
-    .overlay a {font-size: 20px}
-    .overlay .closebtn {
-        font-size: 40px;
-        top: 15px;
-        right: 35px;}  }
-</style>
+
 
     <div class="container">
         <div class="row">
@@ -72,204 +73,214 @@
         <div class="col-8">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia in amet doloremque tempore consequatur. Dignissimos, dicta eos alias aliquam, quisquam quos ab facilis in laudantium corrupti corporis incidunt vitae totam.</div>
     </div>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                </div>
-            <div class="col-md-6">
-            <div class="mw-50">
-                <div class="mh-50">
 
-        <div class="row align-items-end">
-                <div class="col">
-                    <h4><u>Areas</u></h4>
-                    <div class="list-group">
-                        <a href="#" onclick="openMS()" class="list-group-item list-group-item-action">Main Stage</a>
-                        <a href="#" onclick="openBS()" class="list-group-item list-group-item-action">Blue Stage</a>
-                        <a href="#" onclick="openPS()" class="list-group-item list-group-item-action">Pink Stage</a>
-                        <a href="#" onclick="openBoo()" class="list-group-item list-group-item-action">Booths</a>
-                        <a href="#" onclick="openFB()" class="list-group-item list-group-item-action">Food/Beverage</a>
-                        <a href="#" onclick="openPark()" class="list-group-item list-group-item-action">Parking</a>
-                        <a href="#" onclick="openSA()" class="list-group-item list-group-item-action">Smoking Area</a>
-                    </div>
-                </div>
-                <div class="col">
-                    <h4><u>Prize Locations</u></h4>
-                    <div class="list-group">
-                        <a href="#" onclick="openAW()" class="list-group-item list-group-item-action"><img
-                                src="../assets/images/Legend_Present.png" height="45" width="38" alt=""/>Art Work Exhibit</a>
-                        <a href="#" onclick="openBGS()" class="list-group-item list-group-item-action"><img
-                                src="../assets/images/Legend_Present.png" height="45" width="38" alt=""/>Big Glasses Shop</a>
-                        <a href="#" onclick="openPB()" class="list-group-item list-group-item-action"><img
-                                src="../assets/images/Legend_Present.png" height="45" width="38" alt=""/>Paint Booth</a>
-                        </div>
-                </div>
-                <div class="col">
-                   <h4><<u>Amenities<</u></h4>
-                    <div class="list-group">
-                        <a href="#" onclick="openID()" class="list-group-item list-group-item-action"><img
-                                src="../assets/images/Legend_Info.png" height="45" width="38" alt=""/>Information Desk</a>
-                        <a href="#" onclick="openBO()" class="list-group-item list-group-item-action"><img
-                                src="../assets/images/Legend_Can.png" height="25" width="25" alt=""/>Box Office</a>
-                        <a href="#" onclick="openRR()" class="list-group-item list-group-item-action"><img
-                                src="../assets/images/Legend_RestRoom.png" height="25" width="25" alt=""/>Restrooms</a>
-                        <a href="#" onclick="openFA()" class="list-group-item list-group-item-action"><img
-                                src="../assets/images/Legend_Medical.png" height="25" width="25" alt=""/>First Aid Stations</a>
-                        <a href="#" onclick="openGS()" class="list-group-item list-group-item-action"><img
-                                src="../assets/images/Legend_Garbage.png" height="25" width="25" alt=""/>Garbage Stations</a>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-            </div>
-            </div>
-            </div>
-    </div>
 
 
 
 
     <div id="MainS" class="overlay">
-        <a href="javascript:void(0)" class="closebtn" onclick=close("MainS")>&times;</a>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeMS()">&times;</a>
         <div class="overlay-content">
-            <a href="#">Holi Dates</a>
+            <h3>Holi Dates</h3>
             <p style="font-size:12px; color: white"> Sunday
                 , March 28<br />Monday
                 , March 29 </p>
         </div> </div>
         <div id="Blue" class="overlay">
-            <a href="javascript:void(0)" class="closebtn" onclick=close("Blue")>&times;</a>
+            <a href="javascript:void(0)" class="closebtn" onclick="closeBS()">&times;</a>
             <div class="overlay-content">
-                <a href="#">Holi Dates</a>
+                <h3>Holi Dates</h3>
                 <p style="font-size:12px; color: white"> Sunday
                     , March 28<br />Monday
                     , March 29 </p>
             </div></div>
             <div id="Pink" class="overlay">
-                <a href="javascript:void(0)" class="closebtn" onclick=close("Pink")>&times;</a>
+                <a href="javascript:void(0)" class="closebtn" onclick="closePS()">&times;</a>
                 <div class="overlay-content">
-                    <a href="#">Holi Dates</a>
+                    <h3>Holi Dates</h3>
                     <p style="font-size:12px; color: white"> Sunday
                         , March 28<br />Monday
                         , March 29 </p>
                 </div></div>
                 <div id="Booth" class="overlay">
-                    <a href="javascript:void(0)" class="closebtn" onclick=close("Booth")>&times;</a>
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeBoo()">&times;</a>
                     <div class="overlay-content">
-                        <a href="#">Holi Dates</a>
+                        <h3>Holi Dates</h3>
                         <p style="font-size:12px; color: white"> Sunday
                             , March 28<br />Monday
                             , March 29 </p>
                     </div></div>
                     <div id="Food" class="overlay">
-                        <a href="javascript:void(0)" class="closebtn" onclick=close("Food")>&times;</a>
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeFB()">&times;</a>
                         <div class="overlay-content">
-                            <a href="#">Holi Dates</a>
+                            <h3>Holi Dates</h3>
                             <p style="font-size:12px; color: white"> Sunday
                                 , March 28<br />Monday
                                 , March 29 </p>
                         </div></div>
                         <div id="Park" class="overlay">
-                            <a href="javascript:void(0)" class="closebtn" onclick=close("Park")>&times;</a>
+                            <a href="javascript:void(0)" class="closebtn" onclick="closePark()">&times;</a>
                             <div class="overlay-content">
-                                <a href="#">Holi Dates</a>
+                                <h3>Holi Dates</h3>
                                 <p style="font-size:12px; color: white"> Sunday
                                     , March 28<br />Monday
                                     , March 29 </p>
                             </div></div>
                             <div id="Smoke" class="overlay">
-                                <a href="javascript:void(0)" class="closebtn" onclick=close("Smoke")>&times;</a>
+                                <a href="javascript:void(0)" class="closebtn" onclick="closeSA()">&times;</a>
                                 <div class="overlay-content">
-                                    <a href="#">Holi Dates</a>
+                                    <h3>Holi Dates</h3>
                                     <p style="font-size:12px; color: white"> Sunday
                                         , March 28<br />Monday
                                         , March 29 </p>
                                 </div></div>
                                 <div id="Art" class="overlay">
-                                    <a href="javascript:void(0)" class="closebtn" onclick=close("Art")>&times;</a>
+                                    <a href="javascript:void(0)" class="closebtn" onclick="closeAW()">&times;</a>
                                     <div class="overlay-content">
-                                        <a href="#">Holi Dates</a>
+                                        <h3>Holi Dates</h3>
                                         <p style="font-size:12px; color: white"> Sunday
                                             , March 28<br />Monday
                                             , March 29 </p>
                                     </div></div>
                                     <div id="Big" class="overlay">
-                                        <a href="javascript:void(0)" class="closebtn" onclick=close("Big")>&times;</a>
+                                        <a href="javascript:void(0)" class="closebtn" onclick="closeBGS()">&times;</a>
                                         <div class="overlay-content">
-                                            <a href="#">Holi Dates</a>
+                                            <h3>Holi Dates</h3>
                                             <p style="font-size:12px; color: white"> Sunday
                                                 , March 28<br />Monday
                                                 , March 29 </p>
                                         </div></div>
                                         <div id="Paint" class="overlay">
-                                            <a href="javascript:void(0)" class="closebtn" onclick=close("Paint")>&times;</a>
+                                            <a href="javascript:void(0)" class="closebtn" onclick="closePB()">&times;</a>
                                             <div class="overlay-content">
-                                                <a href="#">Holi Dates</a>
+                                                <h3>Holi Dates</h3>
                                                 <p style="font-size:12px; color: white"> Sunday
                                                     , March 28<br />Monday
                                                     , March 29 </p>
                                             </div></div>
                                             <div id="InfoD" class="overlay">
-                                                <a href="javascript:void(0)" class="closebtn" onclick=close("InfoD")>&times;</a>
+                                                <a href="javascript:void(0)" class="closebtn" onclick="closeID()">&times;</a>
                                                 <div class="overlay-content">
-                                                    <a href="#">Holi Dates</a>
+                                                    <h3>Holi Dates</h3>
                                                     <p style="font-size:12px; color: white"> Sunday
                                                         , March 28<br />Monday
                                                         , March 29 </p>
                                                 </div></div>
                                                 <div id="BoxO" class="overlay">
-                                                    <a href="javascript:void(0)" class="closebtn" onclick=close("BoxO")>&times;</a>
+                                                    <a href="javascript:void(0)" class="closebtn" onclick="closeBO()">&times;</a>
                                                     <div class="overlay-content">
-                                                        <a href="#">Holi Dates</a>
+                                                        <h3>Holi Dates</h3>
                                                         <p style="font-size:12px; color: white"> Sunday
                                                             , March 28<br />Monday
                                                             , March 29 </p>
                                                     </div></div>
                                                     <div id="Rest" class="overlay">
-                                                        <a href="javascript:void(0)" class="closebtn" onclick=close("Rest")>&times;</a>
+                                                        <a href="javascript:void(0)" class="closebtn" onclick="closeRR()">&times;</a>
                                                         <div class="overlay-content">
-                                                            <a href="#">Holi Dates</a>
+                                                            <h3>Holi Dates</h3>
                                                             <p style="font-size:12px; color: white"> Sunday
                                                                 , March 28<br />Monday
                                                                 , March 29 </p>
                                                         </div></div>
                                                         <div id="First" class="overlay">
-                                                            <a href="javascript:void(0)" class="closebtn" onclick=close("First")>&times;</a>
+                                                            <a href="javascript:void(0)" class="closebtn" onclick="closeFA()">&times;</a>
                                                             <div class="overlay-content">
-                                                                <a href="#">Holi Dates</a>
+                                                                <h3>Holi Dates</h3>
                                                                 <p style="font-size:12px; color: white"> Sunday
                                                                     , March 28<br />Monday
                                                                     , March 29 </p>
                                                             </div></div>
                                                             <div id="Garb" class="overlay">
-                                                                <a href="javascript:void(0)" class="closebtn" onclick=close("Garb")>&times;</a>
+                                                                <a href="javascript:void(0)" class="closebtn" onclick="closeGS()">&times;</a>
                                                                 <div class="overlay-content">
-                                                                    <a href="#">Holi Dates</a>
+                                                                    <h3>Holi Dates</h3>
                                                                     <p style="font-size:12px; color: white"> Sunday
                                                                         , March 28<br />Monday
                                                                         , March 29 </p>
                                                                 </div>
                                                             </div>
 
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+        </div>
+        <div class="col-md-6">
+                    <div class="row align-items-end">
+                        <div class="col">
+                            <h4><u>Areas</u></h4>
+                            <div class="list-group">
+                                <a href="#" onclick="openMS()" class="list-group-item list-group-item-action">Main Stage</a>
+                                <a href="#" onclick="openBS()" class="list-group-item list-group-item-action">Blue Stage</a>
+                                <a href="#" onclick="openPS()" class="list-group-item list-group-item-action">Pink Stage</a>
+                                <a href="#" onclick="openBoo()" class="list-group-item list-group-item-action">Booths</a>
+                                <a href="#" onclick="openFB()" class="list-group-item list-group-item-action">Food/Beverage</a>
+                                <a href="#" onclick="openPark()" class="list-group-item list-group-item-action">Parking</a>
+                                <a href="#" onclick="openSA()" class="list-group-item list-group-item-action">Smoking Area</a>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <h4><u>Prize Locations</u></h4>
+                            <div class="list-group">
+                                <a href="#" onclick="openAW()" class="list-group-item list-group-item-action"><img
+                                        src="../assets/images/Legend_Present.png" height="45" width="38" alt=""/>Art Work Exhibit</a>
+                                <a href="#" onclick="openBGS()" class="list-group-item list-group-item-action"><img
+                                        src="../assets/images/Legend_Present.png" height="45" width="38" alt=""/>Big Glasses Shop</a>
+                                <a href="#" onclick="openPB()" class="list-group-item list-group-item-action"><img
+                                        src="../assets/images/Legend_Present.png" height="45" width="38" alt=""/>Paint Booth</a>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <h4><u>Amenities</u></h4>
+                            <div class="list-group">
+                                <a href="#" onclick="openID()" class="list-group-item list-group-item-action"><img
+                                        src="../assets/images/Legend_Info.png" height="45" width="38" alt=""/>Information Desk</a>
+                                <a href="#" onclick="openBO()" class="list-group-item list-group-item-action"><img
+                                        src="../assets/images/Legend_Can.png" height="25" width="25" alt=""/>Box Office</a>
+                                <a href="#" onclick="openRR()" class="list-group-item list-group-item-action"><img
+                                        src="../assets/images/Legend_RestRoom.png" height="25" width="25" alt=""/>Restrooms</a>
+                                <a href="#" onclick="openFA()" class="list-group-item list-group-item-action"><img
+                                        src="../assets/images/Legend_Medical.png" height="25" width="25" alt=""/>First Aid Stations</a>
+                                <a href="#" onclick="openGS()" class="list-group-item list-group-item-action"><img
+                                        src="../assets/images/Legend_Garbage.png" height="25" width="25" alt=""/>Garbage Stations</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 <script>
-    function close(idd){document.getElementById(idd).style.height = "0%";}
     function openMS() {document.getElementById("MainS").style.height = "90%";}
+    function closeMS() {document.getElementById("MainS").style.height = "0%";}
     function openBS() {document.getElementById("Blue").style.height = "90%";}
-    function closeBS() {document.getElementById("Blue").style.height = "90%";}
+    function closeBS() {document.getElementById("Blue").style.height = "0%";}
     function openPS() {document.getElementById("Pink").style.height = "90%";}
+    function closePS() {document.getElementById("Pink").style.height = "0%";}
     function openBoo() {document.getElementById("Booth").style.height = "90%";}
+    function closeBoo() {document.getElementById("Booth").style.height = "0%";}
     function openFB() {document.getElementById("Food").style.height = "90%";}
+    function closeFB() {document.getElementById("Food").style.height = "0%";}
     function openPark() {document.getElementById("Park").style.height = "90%";}
+    function closePark() {document.getElementById("Park").style.height = "0%";}
     function openSA() {document.getElementById("Smoke").style.height = "90%";}
+    function closeSA() {document.getElementById("Smoke").style.height = "0%";}
     function openAW() {document.getElementById("Art").style.height = "90%";}
+    function closeAW() {document.getElementById("Art").style.height = "0%";}
     function openBGS() {document.getElementById("Big").style.height = "90%";}
+    function closeBGS() {document.getElementById("Big").style.height = "0%";}
     function openPB() {document.getElementById("Paint").style.height = "90%";}
+    function closePB() {document.getElementById("Paint").style.height = "0%";}
     function openID() {document.getElementById("InfoD").style.height = "90%";}
+    function closeID() {document.getElementById("InfoD").style.height = "0%";}
     function openBO() {document.getElementById("BoxO").style.height = "90%";}
+    function closeBO() {document.getElementById("BoxO").style.height = "0%";}
     function openRR() {document.getElementById("Rest").style.height = "90%";}
+    function closeRR() {document.getElementById("Rest").style.height = "0%";}
     function openFA() {document.getElementById("First").style.height = "90%";}
+    function closeFA() {document.getElementById("First").style.height = "0%";}
     function openGS() {document.getElementById("Garb").style.height = "90%";}
+    function closeGS() {document.getElementById("Garb").style.height = "0%";}
 </script>
 </body>
 <script type="text/javascript">
