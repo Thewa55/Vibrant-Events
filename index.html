@@ -11,90 +11,65 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/index.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 </head>
 <body>
-    <div class="container-fluid hero">
-        <div class="position-relative">
-            <img class="mx-auto logo d-block p-5" src="./assets/images/logo.png"></div>
-            <div class="dropdown pb-4" >
-                <select class="form-select location" style="width: 100%; height:1.5em; border:none;" aria-label="Default select example">
-                    <option selected style="text-align: right;">Event Locations</option>
-                    <option value="1">Location One</option>
-                    <option value="2">Location Two</option>
-                    <option value="3">Location Three</option>
-                  </select>
+    <div class="container-fluid hero"  style="padding: 0;">
+        <div class="iconRow"><img class="icon" src="./assets/images/twitter.svg"><img class="icon" src="./assets/images/instgram.svg"></div>
+        <div class="position-relative logoRow"><img class="mx-auto logo d-block p-5" src="./assets/images/logo.png"></div>
+        <div class="container" >
+            <div class="row mt-5" style="margin-top: 50px;">
+                <div class="col-7">
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    <!-- <div class="dropdown pb-4" >
+                        <select class="form-select location" style="width: 100%; height:1.5em; border:none;" aria-label="Default select example">
+                            <option selected style="text-align: right;">Event Type</option>
+                            <option value="1">Location One</option>
+                            <option value="2">Location Two</option>
+                            <option value="3">Location Three</option>
+                        </select>
+                    </div> -->
+                </div>
+                <div class="col-3">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Zip Code" aria-label="Zip Codee" aria-describedby="basic-addon2">
+                    </div>
+                </div>
+                <div class="col-1">
+                    <div class="input-group mb-3" >
+                        <button type="button" style="background-color: #b63073;" class="btn btn-primary">GO</button>
+                    </div>
+                </div>
             </div>
         </div>
-
+        <div class="row align-items-end" style="margin-left: 0em; width: 93.76%; margin-top: 160px;">
+            <div class="col-3" style="padding: 0;">
+                <div class="card">
+                    <img class="card-img-top" src="./assets/images/pic1.jpg" alt="Card image cap">
+                </div>
+            </div>
+            <div class="col-3" style="padding: 0;">
+                <div class="card">
+                    <img class="card-img-top" src="./assets/images/pic4.jpg" alt="Card image cap">
+                </div>
+            </div>
+            <div class="col-3" style="padding: 0;" >
+                <div class="card">
+                    <img class="card-img-top" src="./assets/images/pic3.jpg" alt="Card image cap">
+                </div>
+            </div>
+            <div class="col-3" style="padding: 0;">
+                <div class="card">
+                    <img class="card-img-top" src="./assets/images/pic2.jpg" alt="Card image cap">
+                </div>
+            </div>
+        </div>
     </div>    
-    <!-- <div class="jumbotron jumbotron-fluid hero">
-        <div class="container ">
-            <div class="row justify-content-end">
-                <div class="col-1 pt-3">
-                    <img class="logo" src="assets/images/V logo.png">
-                </div>
-            </div>
-        </div>
-        <h1 class="text-center pt-5 animate__animated animate__jackInTheBox">Welcome to Vibrant Events</h1>
-        <div class="py-5 container">
-            <div class=" py-5 row justify-content-center">
-                <div class="col-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="dropdown pb-4" >
-                                <select class="form-select location" style="width: 100%; height:1.5em" aria-label="Default select example">
-                                    <option selected>Event Locations</option>
-                                    <option value="1">Location One</option>
-                                    <option value="2">Location Two</option>
-                                    <option value="3">Location Three</option>
-                                  </select>
-                            </div>
-                            <div class="container">
-                                <div class="row justify-content-around">
-                                    <div class="col-4">
-                                        <button class="btn select btn-primary">Select Event</button>
-                                      </div>
-                                      <div class="col-4">
-                                        <button class="btn events btn-primary">Full Event List</button>
-                                      </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>      
-                </div>     
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid py-5">
-        <div class="row">
-            <div class="col-4">
-                <div id="holi" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="d-block w-100" src="./assets/images/Holi-Cara1.jpeg" alt="First slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="./assets/images/Holi-Cara2.jpeg" alt="Second slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="./assets/images/Holi-Cara3.jpeg" alt="Third slide">
-                    </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#holi" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#holi" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-8">
-                <p>Holi is a popular Hindu festival, also known as the "festival of love", the "festival of colours", and the "festival of spring". The festival celebrates the eternal and divine love of Radha and Krishna. It also signifies the triumph of good over evil. It originated and is predominantly celebrated in India, but has also spread to other regions of Asia and parts of the Western world through the diaspora from the Indian subcontinent.</p>
-            </div>
-        </div>    
-    </div> -->
     <script src="./assets/js/index.js"></script>
 </body>
 </html>

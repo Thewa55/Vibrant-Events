@@ -5,8 +5,8 @@
     -o-background-size: cover;
     background-size: auto 100%;
     background-repeat: no-repeat;
-    opacity: .5;
-    height: 1011px !important;
+    /* opacity: .75; */
+    height: 960px !important;
     width: 1536px !important;
 }
 .header {
@@ -14,8 +14,7 @@
 }
 .logo {
     /* width: 5em; */
-    width: 71px;
-    float: right;
+    opacity: 1;
 }
 body {
     background-color: white;
@@ -104,4 +103,14 @@ p {
   font-size: 30px;
   font-weight: bold;
   color: #ffffff;
+}
+.iconRow{
+  float: right;
+  margin-right: 8em;
+}
+.icon{
+  height: 48px;
+  padding-right: 1em;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
