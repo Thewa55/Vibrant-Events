@@ -1,7 +1,3 @@
-// This example adds hide() and show() methods to a custom overlay's prototype.
-// These methods toggle the visibility of the container <div>.
-// overlay to or from the map.
-
 let map, infoWindow;
 let loadedMarkers = [];
 
@@ -29,7 +25,7 @@ const markers = [
     {
         "lat": null,
         "lng": null,
-        "image": "../assets/images/Legend_Present.png",
+        "image": "assets/images/Legend_Present.png",
         "type": AREAS,
         "name": "Blue Stage",
         "style": null
@@ -79,7 +75,7 @@ const markers = [
     {
         "lat": 40.6242009555238,
         "lng": -74.24627618067619,
-        "image": "../assets/images/Legend_Present.png",
+        "image": "assets/images/Legend_Present.png",
         "type": PRIZE,
         "name": "Art Work Exhibit",
         "style": LEGEND_PRESENT
@@ -87,7 +83,7 @@ const markers = [
     {
         "lat": 40.626554283654315,
         "lng": -74.24678043595631,
-        "image": "../assets/images/Legend_Present.png",
+        "image": "assets/images/Legend_Present.png",
         "type": PRIZE,
         "name": "Big Glasses Shop",
         "style": LEGEND_PRESENT
@@ -95,7 +91,7 @@ const markers = [
     {
         "lat": 40.626407712005395,
         "lng": -74.24436644791314,
-        "image": "../assets/images/Legend_Present.png",
+        "image": "assets/images/Legend_Present.png",
         "type": PRIZE,
         "name": "Paint Booth",
         "style": LEGEND_PRESENT
@@ -105,7 +101,7 @@ const markers = [
     {
         "lat": 40.624998979198935,
         "lng": -74.2466195034201,
-        "image": "../assets/images/Legend_Info.png",
+        "image": "assets/images/Legend_Info.png",
         "type": AMENITIES,
         "name": "Information Desk",
         "style": LEGEND_INFO
@@ -113,7 +109,7 @@ const markers = [
     {
         "lat": 40.625788850385774,
         "lng": -74.2451925682657,
-        "image": "../assets/images/Legend_Can.png",
+        "image": "assets/images/Legend_Can.png",
         "type": AMENITIES,
         "name": "Box Office",
         "style": LEGEND_CAN
@@ -121,7 +117,7 @@ const markers = [
     {
         "lat": 40.624062521874976,
         "lng": -74.24720958938623,
-        "image": "../assets/images/Legend_RestRoom.png",
+        "image": "assets/images/Legend_RestRoom.png",
         "type": AMENITIES,
         "name": "Restrooms",
         "style": LEGEND_RESTROOM
@@ -129,7 +125,7 @@ const markers = [
     {
         "lat": 40.62699399667107,
         "lng": -74.24495653387925,
-        "image": "../assets/images/Legend_Medical.png",
+        "image": "assets/images/Legend_Medical.png",
         "type": AMENITIES,
         "name": "First Aid Station",
         "style": LEGEND_MEDICAL
@@ -137,7 +133,7 @@ const markers = [
     {
         "lat": 40.62536541544722,
         "lng": -74.24759582747315,
-        "image": "../assets/images/Legend_Garbage.png",
+        "image": "assets/images/Legend_Garbage.png",
         "type": AMENITIES,
         "name": "Garbage Station",
         "style": LEGEND_GARBAGE
@@ -153,8 +149,6 @@ function initMap() {
         mapTypeId: "roadmap",
     });
 
-
-    //40.622808462797984, -74.2494304586045
     const bounds = new google.maps.LatLngBounds(
         new google.maps.LatLng(40.62289089686685, -74.24958816174413), //South West
         new google.maps.LatLng(40.62726177970077, -74.24345641746564) //North East
@@ -264,15 +258,6 @@ function initMap() {
     toggleButton.classList.add("custom-map-control-button");
     toggleButton.addEventListener("click", () => {overlay.toggle(); });
     map.controls[google.maps.ControlPosition.TOP_RIGHT].push(toggleButton);
-
-    /*
-    const toggleDOMButton = document.createElement("button");
-    toggleDOMButton.textContent = "Toggle DOM Attachment";
-    toggleDOMButton.classList.add("custom-map-control-button");
-
-    toggleDOMButton.addEventListener("click", () => {overlay.toggleDOM(map); });
-    map.controls[google.maps.ControlPosition.TOP_RIGHT].push(toggleDOMButton);
-    */
 
     infoWindow = new google.maps.InfoWindow();
     const locationButton = document.createElement("button");
