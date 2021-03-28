@@ -6,9 +6,8 @@
     background-size: cover;
     background-repeat: no-repeat;
     /* opacity: .75; */
-    height: 840px !important;
-    width: 1080px !important;
-
+    /* height: 960px !important;
+    width: 100% !important; */
 }
 
 .header {
