@@ -6,8 +6,8 @@
     background-size: auto 100%;
     background-repeat: no-repeat;
     /* opacity: .75; */
-    height: 960px !important;
-    width: 1536px !important;
+    /* height: 960px !important;
+    width: 100% !important; */
 }
 .inputCol{
   margin-top: 150px !important;
@@ -36,7 +36,7 @@ body {
     border-bottom: 1px solid #fff;
 
 }
-.col-6 {
+.detailsSection {
   margin-top: 100px !important;
 }
 .menuItem {
@@ -139,4 +139,83 @@ body {
   font-family: OpenSans;
   font-size: 27px;
   font-weight: 600;
+}
+
+.hero2 {
+  height: 960px !important;
+  width: 1536px !important;
+}
+
+.events{
+  margin: 100px 99px 18px 43px;
+  padding: 16px 200px 15px 24px;
+  background-color: #b63073;
+  width: 100%;
+  color: white;
+  font-family: GillSans;
+  font-size: 18px;
+}
+.past{
+  margin: 100px 99px 18px 43px;
+  padding: 16px 200px 15px 24px;
+  background-color: #55338e;
+  width: 100%;
+  color: white;
+  font-family: GillSans;
+  font-size: 18px;
+}
+.photoGallery{
+  margin: 100px 99px 18px 43px;
+  padding: 16px 200px 15px 24px;
+  background-color: #129eaf;
+  width: 100%;
+  color: white;
+  font-family: GillSans;
+  font-size: 18px;
+}
+.upcoming{
+  font-family: OpenSans;
+  font-size: 18px;
+  font-weight: 600;
+  color: #555555;
+}
+.eventPic{
+  height: 92px;
+  width: 61px;
+}
+.eventTitle {
+  font-family: OpenSans;
+  font-size: 20px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #b63073;
+}
+.timeLoc{
+  font-weight: normal;
+  color: #555555;
+  font-family: OpenSans;
+  font-size: 20px;
+  font-weight: 600;
+}
+.highlight{
+  font-size: 18px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #555555;
+}
+.card-title{
+  font-family: OpenSans;
+  font-size: 36px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #55338e;
 }
