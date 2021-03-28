@@ -1,5 +1,5 @@
 .hero {
-    background-image:url("../images/herobackground.jpg");
+    background-image:url("../images/herobackground2.jpg");
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -9,8 +9,14 @@
     height: 960px !important;
     width: 1536px !important;
 }
+.inputCol{
+  margin-top: 150px !important;
+}
 .header {
   color: white;
+}
+.input {
+  margin-top: 5em;
 }
 .logo {
     /* width: 5em; */
@@ -25,16 +31,14 @@ body {
     font-family: 'Open Sans', GillSans, Arial;
     margin: 0px;
 }
-p {
-}
-
-
 .menuItem a{
     text-decoration: none;
     border-bottom: 1px solid #fff;
 
 }
-
+.col-6 {
+  margin-top: 100px !important;
+}
 .menuItem {
     float: right;
     vertical-align: middle;
@@ -114,13 +118,25 @@ p {
   font-weight: bold;
   color: #ffffff;
 }
-.iconRow{
-  float: right;
-  margin-right: 8em;
-}
-.icon{
+
+.twitterIcon{
   height: 36px;
-  padding-right: 1em;
   margin-top: 2em;
   margin-bottom: 2em;
+  margin-right: 2em;
+}
+.instaIcon{
+  height: 36px;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.go{
+  background-color: #b63073;
+  color: #ffffff;
+  width: 150px;
+  height: 72px;
+  font-family: OpenSans;
+  font-size: 27px;
+  font-weight: 600;
 }
