@@ -30,6 +30,7 @@
         left: 0px;
         width: 100%;
         flex: 1 0 auto;
+        height: 100%;
     }
 
     .mapsTable {
@@ -47,10 +48,16 @@
         color:white;
         background-size: cover;
         cursor: pointer;
+
+        background-image: url('assets/images/locatoinTexture.png');
+        background-size: 300px auto;
+        background-repeat: repeat-y;
     }
 
     .accordion1 {
-        background-color: #a11b5e;
+        /* background-color: #a11b5e; */
+        background-color: #b63073;
+
     }
 
     .accordion2 {
@@ -136,6 +143,7 @@
 
     #accordion.fullAccordion {
         height: 100%;
+        min-width: 385px;
     }
 
 
@@ -150,10 +158,12 @@
 
     .legendsWrapper {
         width: 100%;
+        min-width: 60em;
     }
 
     .legendsSection {
-        width: 20em;
+        width: 15em;
+        min-width: 15em;
         float: left;
         padding: 40px;
     }
@@ -173,6 +183,12 @@
         left: 15px;
         top: -6px;
         cursor: pointer;
+        border-bottom: 1px #FFFFFF solid;
+        transition: border-bottom-color 0.3s ease;
+    }
+
+    .legendsSection li span:hover {
+        border-bottom-color: #525252;
     }
 
     .legendsSection li::before {
@@ -210,7 +226,10 @@
         height: 700px;
         width: 260px;
         padding: 20px;
-        visibility: hidden;
+        /* visibility: hidden; */
+        opacity: 0;
+
+        transition: opacity 0.3s ease;
 
     }
 

@@ -33,7 +33,8 @@ var accordion= {
 				that.clearAnimate();
 			}
 			that.active(options,$(this));
-			$('#detailPopup').css('visibility', 'hidden');
+			$('#detailPopup').css('opacity', '0').css('z-index', '-99');
+
 		});
 		/*
 		$items.on("mouseover",function(){
