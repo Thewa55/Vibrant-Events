@@ -6,9 +6,8 @@ $(document).ready(() => {
     })
 
     $(".select").on("click", () => {
-        let location = $(".form-select")
-        console.log(location)
-
+        var conceptName = $('.form-select').find(":selected").text();
+        console.log(conceptName)
     })
 
 })

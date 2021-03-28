@@ -21,3 +21,6 @@ body {
 p {
   color: silver;
 }
+.d-block {
+  border-radius: 50%;
+}
