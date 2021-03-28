@@ -14,7 +14,7 @@ var accordion= {
 			autoPlay: false,
 			delay: 3000,
 			animateTime: 400,
-			borderWidth: 1,
+			borderWidth: 0,
 			deviator: 30,
 			bounce:"-50px"
 		},options);
@@ -128,7 +128,7 @@ var accordion= {
 		$items.each(function(i,elem){
 			$item=$(elem);
 			$item.css({"z-index":i+1,"width": options.expandWidth+"px"});
-			$item.append('<div class="pana-accordion-mask"></div>');
+			//$item.append('<div class="pana-accordion-mask"></div>');
 		})
 		that.active(options,$items.eq(options.extpand));
 	}

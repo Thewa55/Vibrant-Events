@@ -10,43 +10,226 @@
     <link rel="stylesheet" href="../assets/css/Maps.css">
     <script type="text/javascript" src="Accordion/pana-accordion.js"></script>
     <script type="text/javascript" src="Overlay.js"></script>
+    <link rel="stylesheet" href="../assets/css/index.css" />
 </head>
+<style>
+    html, body {
+        height: 100%;
+        min-height: 100%;
+        margin: 0px;
+    }
+    .main {
+        height: 100%;
+        min-height:1000px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mapsTableWrap {
+        position:relative;
+        left: 0px;
+        width: 100%;
+        flex: 1 0 auto;
+    }
+
+    .mapsTable {
+        width: 100%;
+        height: 100%;
+        border-collapse: collapse;
+    }
+
+    .headerBar {
+        height: 90px;
+        flex: 0 0 auto;
+    }
+
+    .accordion{
+        color:white;
+        background-size: cover;
+    }
+
+    .accordion1 {
+        background-color: #a11b5e;
+    }
+
+    .accordion2 {
+        background-color: #0c8594;
+    }
+
+    .accordion3 {
+        background-color: #4d2b88;
+    }
+
+    .headerRotate{
+        transform: rotate(270deg);
+        transform-origin: 0 0;
+    }
+
+    .locHeaderTitle {
+        font-size: 21px;
+        font-weight: bold;
+        padding-right:15px;
+    }
+
+    .locHeaderCity {
+        font-size: 16px;
+    }
+
+    .accordion.active .locationHeader {
+        color: transparent;
+        width: 10px;
+        left: 1000px;
+    }
+
+    .accordion:not(.active) .locationDetail {
+        color: transparent !important;
+    }
+
+    .locationDetail {
+        margin-left:1em;
+        margin-right:1em;
+    }
+
+    .locationDetail h1,
+    .locationDetail div {
+    }
+
+    .detailCity {
+        font-size: 17px;
+        font-weight: 600;
+        padding-bottom: 150px;
+    }
+    .detailText {
+        font-size: 16px;
+    }
+    .locationDetail h1 {
+        font-size: 48px;
+        font-weight: 600;
+        margin-top: 25px;
+        margin-bottom: 5px;
+    }
+
+    .locationHeader{
+        transition: color 0.3s ease, width 0.3s ease;
+
+        /* Abs positioning makes it not take up vert space */
+        position: absolute;
+        top: 0;
+        left: 28px;
+        text-align: left;
+        /* Border is the new background */
+        background: none;
+        margin-top: 1em;
+        /* Rotate from top left corner (not default) */
+        transform-origin: 0 0;
+        transform: rotate(90deg);
+        margin-left: 5px;
+        float: left;
+        width: 400px;
+    }
+
+
+
+</style>
 <body>
-    <table style="width:100%; height:100%;">
-        <tr style="height:100%;">
-            <td style="width: 40%; height:100%;">
-                <div class="pana-accordion fullAccordion" id="accordion">
-                    <div class="pana-accordion-wrap" >
-                        <div class="pana-accordion-item" style="color:white; background-color: #F44336; background-size: cover; background-image: url('https://unsplash.it/500/300?image=57');" data-accordian="1">
-                            <h1 class="locationHeader"> Linden, NJ</h1>
-                            <div style="margin-left: 3em;">
-                            <h1 style="color: white; z-index: 1">Holi Celebration in Linden, NJ</h1>
-                            <div><span style="font-weight: bold; font-size:.75em">Linden, NJ</span> <br/><br/>Come join us in Linden, NJ on the weeekend of March 28 for the celebration of colors. Everyone of color, race and gender are invited to this family event. It will be a colorful time.</div>
+    <div class="main">
+        <div class="headerBar" style="height:90px">
+            <img id="mainLogo" width="71" height="65" src="../assets/images/Logo.png" />
+            <span style="width:35px; height:10px; float:right;">
+                </span>
+            <div class="menuItem vewMap">
+                <a id="viewMapMenu">VIEW MAP</a>
+            </div>
+            <div class="menuItem vewSchedule">
+                <a id="viewScheduleMenu">VIEW SCHEDULE</a>
+            </div>
+            <div class="menuItem photoGallery">
+                <a id="photoGalleryMenu">PHOTO GALLERY</a>
+            </div>
+        </div>
+        <div class="mapsTableWrap" >
+
+            <table class="mapsTable">
+                <tr style="">
+                    <td style="width: 385px;">
+                        <div class="pana-accordion fullAccordion" id="accordion">
+                            <div class="pana-accordion-wrap" >
+                                <div class="pana-accordion-item accordion1 accordion"  data-accordian="1">
+                                    <div class="locationHeader headerRotate">
+                                        <span class="locHeaderTitle">First Title of Event Area</span>
+                                        <span class="locHeaderCity">Linden, NJ</span>
+                                    </div>
+                                    <div class="locationDetail">
+                                        <h1>First Title of Event Area</h1>
+                                        <div >
+                                            <span class="detailCity" style="">Linden, NJ</span>
+                                            <br /><br /><br /><br />
+                                            <p class="detailText">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec ante fermentum, volutpat dolor eget, sodales odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis odio eu nisi rutrum consequat. Donec ut nunc augue. Aliquam erat volutpat. Suspendisse in sem non nulla accumsan lacinia quis eu turpis. Curabitur non ligula nisi. Maecenas magna ligula, sodales vitae maximus vel, faucibus et arcu. Duis id enim tortor. Nam non urna in sapien pretium iaculis at vel libero. Fusce massa ante, ornare in elit vel, bibendum laoreet risus. Donec commodo mauris id libero consectetur pellentesque. Fusce at ante nunc. Sed condimentum finibus finibus.
+                                            </p>
+                                            <p>
+                                                In at rutrum ligula. Praesent sit amet sapien eget nibh cursus hendrerit. Proin egestas lobortis eleifend. Maecenas vitae turpis vitae nisi ullamcorper vehicula sit amet vitae sem. Maecenas at posuere lorem. Ut eget justo a ipsum scelerisque vestibulum. Fusce id tempus purus, sit amet semper ipsum.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pana-accordion-item accordion2 accordion"  data-accordian="2">
+                                    <div class="locationHeader headerRotate">
+                                        <span class="locHeaderTitle">Second Title of Event Area</span>
+                                        <span class="locHeaderCity">Edison, NJ</span>
+                                    </div>
+                                    <div class="locationDetail">
+                                        <h1>Second Title of Event Area</h1>
+                                        <div >
+                                            <span class="detailCity" style="">Edison, NJ</span>
+                                            <br /><br /><br /><br />
+                                            <p class="detailText">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec ante fermentum, volutpat dolor eget, sodales odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis odio eu nisi rutrum consequat. Donec ut nunc augue. Aliquam erat volutpat. Suspendisse in sem non nulla accumsan lacinia quis eu turpis. Curabitur non ligula nisi. Maecenas magna ligula, sodales vitae maximus vel, faucibus et arcu. Duis id enim tortor. Nam non urna in sapien pretium iaculis at vel libero. Fusce massa ante, ornare in elit vel, bibendum laoreet risus. Donec commodo mauris id libero consectetur pellentesque. Fusce at ante nunc. Sed condimentum finibus finibus.
+                                            </p>
+                                            <p>
+                                                In at rutrum ligula. Praesent sit amet sapien eget nibh cursus hendrerit. Proin egestas lobortis eleifend. Maecenas vitae turpis vitae nisi ullamcorper vehicula sit amet vitae sem. Maecenas at posuere lorem. Ut eget justo a ipsum scelerisque vestibulum. Fusce id tempus purus, sit amet semper ipsum.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pana-accordion-item accordion3 accordion"  data-accordian="3">
+                                    <div class="locationHeader headerRotate">
+                                        <span class="locHeaderTitle">Third Title of Event Area</span>
+                                        <span class="locHeaderCity">Woodbridge, NJ</span>
+                                    </div>
+                                    <div class="locationDetail">
+                                        <h1>Third Title of Event Area</h1>
+                                        <div >
+                                            <span class="detailCity" style="">Woodbridge, NJ</span>
+                                            <br /><br /><br /><br />
+                                            <p class="detailText">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec ante fermentum, volutpat dolor eget, sodales odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis odio eu nisi rutrum consequat. Donec ut nunc augue. Aliquam erat volutpat. Suspendisse in sem non nulla accumsan lacinia quis eu turpis. Curabitur non ligula nisi. Maecenas magna ligula, sodales vitae maximus vel, faucibus et arcu. Duis id enim tortor. Nam non urna in sapien pretium iaculis at vel libero. Fusce massa ante, ornare in elit vel, bibendum laoreet risus. Donec commodo mauris id libero consectetur pellentesque. Fusce at ante nunc. Sed condimentum finibus finibus.
+                                            </p>
+                                            <p>
+                                                In at rutrum ligula. Praesent sit amet sapien eget nibh cursus hendrerit. Proin egestas lobortis eleifend. Maecenas vitae turpis vitae nisi ullamcorper vehicula sit amet vitae sem. Maecenas at posuere lorem. Ut eget justo a ipsum scelerisque vestibulum. Fusce id tempus purus, sit amet semper ipsum.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="pana-accordion-item" style="background-color: #2196F3; background-size: cover; background-image: url('https://unsplash.it/500/300?image=58')"  data-accordian="2">
-                            <!-- <img height="100%" src="https://unsplash.it/500/300?image=49" />-->
-                            <h1 class="locationHeader"> Edison, NJ</h1>
-                        </div> 
-                        <div class="pana-accordion-item" style="background-color: #4CAF50; background-size: cover; background-image: url('https://unsplash.it/500/300?image=59')"  data-accordian="3">
-                            <!-- <img height="100%" src="https://unsplash.it/500/300?image=39" /> -->
-                            <h1 class="locationHeader" style="z-index: 1;"> Woodbridge, NJ</h1>
+                    </td>
+                    <td style="width: auto; vertical-align: top;">
+                        <div style="height:100%;" id="MapWrapper">
+                            <div id="map"></div>
+                            <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+                            <script
+                                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFMM4Aij-764bPjnAoC861OqvbH_-R1bs&callback=initMap&libraries=&v=weekly"
+                                    async
+                            ></script>
                         </div>
-                        <!-- <div class="pana-accordion-item" style="background-color: #FF9800"><img height="100%" src="https://unsplash.it/500/300?image=29" /></div> -->
-                    </div>
-                </div>
-            </td>
-            <td style="width: 70%; vertical-align: top;">
-                <div style="height:100%;" id="MapWrapper">
-                    <div id="map"></div>
-                    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
-                    <script
-                            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFMM4Aij-764bPjnAoC861OqvbH_-R1bs&callback=initMap&libraries=&v=weekly"
-                            async
-                    ></script>
-                </div>
-            </td>
-        </tr>
-    </table>
+                    </td>
+                </tr>
+            </table>
+
+
+        </div>
+    </div>
+    <script src="../assets/js/events.js"></script>
 </body>
 </html>

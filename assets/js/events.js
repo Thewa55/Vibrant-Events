@@ -4,13 +4,9 @@ $(document).ready(() => {
         location.href = "./index.html"
     });
 
-    /*
-    $('#viewMapMenu').on('click', () => {
-        location.href = "./GoogleMaps/Maps.html"
-    });
-    */
+    $('.vewMap a').attr('href', './GoogleMaps/Maps.html');
 
-    $('#viewMapMenu').attr('href', './GoogleMaps/Maps.html');
+    $('.vewSchedule a').attr('href', './EventsPage.html');
 
 
 
