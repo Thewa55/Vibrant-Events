@@ -196,10 +196,37 @@
         display: inline-block;
         height: 25px;
         width: 25px;
+    }
+
+    .legendGarbage::before {
         background-image: url('assets/images/Legend_Garbage.png');
         background-position: bottom;
     }
 
+    .legendCan::before {
+        background-image: url('assets/images/Legend_Can.png');
+        background-position: bottom;
+    }
+
+    .legendInfo::before {
+        background-image: url('assets/images/Legend_Info.png');
+        background-position: bottom;
+    }
+
+    .legendMedical::before {
+        background-image: url('assets/images/Legend_Medical.png');
+        background-position: bottom;
+    }
+
+    .legendPresent::before, img.legendPresent {
+        background-image: url('assets/images/Legend_Present.png');
+        background-position: bottom;
+    }
+
+    .legendRestRoom::before, img.legendRestRoom{
+        background-image: url('assets/images/Legend_RestRoom.png');
+        background-position: bottom;
+    }
 
     .legendsSection {
         color: #525252;
@@ -372,7 +399,7 @@
             <img width="100%" src="assets/images/EventsImage2.jpg" />
         </div>
         <div class="detailPopupTitle">
-            <img style="height: 25px; width: 25px; float:left;">
+            <img id="detailIcon" style="height: 25px; width: 25px; float:left;">
             <div style="float:left;" id="detailTitleText">Art Exhibit Prize Pack</div>
         </div>
         <div class="detailPopupText" >

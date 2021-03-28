@@ -9,55 +9,70 @@ const AREAS = "Areas";
 const PRIZE = "Prize";
 const AMENITIES = "Amenities";
 
+
+const LEGEND_GARBAGE = "legendGarbage";
+const LEGEND_CAN = "legendCan";
+const LEGEND_INFO = "legendInfo";
+const LEGEND_MEDICAL = "legendMedical";
+const LEGEND_PRESENT = "legendPresent";
+const LEGEND_RESTROOM = "legendRestRoom";
+
 const markers = [
     {
         "lat": null,
         "lng": null,
+        "image": null,
+        "type": AREAS,
+        "name": "Main Stage",
+        "style": null
+    },
+    {
+        "lat": null,
+        "lng": null,
         "image": "../assets/images/Legend_Present.png",
         "type": AREAS,
-        "name": "Main Stage"
-    },
-    {
-        "lat": null,
-        "lng": null,
-        "image": "../assets/images/Legend_Present.png",
-        "type": AREAS,
-        "name": "Blue Stage"
+        "name": "Blue Stage",
+        "style": null
     },
     {
         "lat": null,
         "lng": null,
         "image": null,
         "type": AREAS,
-        "name": "Pink Stage"
+        "name": "Pink Stage",
+        "style": null
     },
     {
         "lat": null,
         "lng": null,
         "image": null,
         "type": AREAS,
-        "name": "Booths/Exibits"
+        "name": "Booths/Exibits",
+        "style": null
     },
     {
         "lat": null,
         "lng": null,
         "image": null,
         "type": AREAS,
-        "name": "Food/Beverage"
+        "name": "Food/Beverage",
+        "style": null
     },
     {
         "lat": null,
         "lng": null,
         "image": null,
         "type": AREAS,
-        "name": "Parking"
+        "name": "Parking",
+        "style": null
     },
     {
         "lat": null,
         "lng": null,
         "image": null,
         "type": AREAS,
-        "name": "Smoking Area"
+        "name": "Smoking Area",
+        "style": null
     },
 
 
@@ -66,21 +81,24 @@ const markers = [
         "lng": -74.24627618067619,
         "image": "../assets/images/Legend_Present.png",
         "type": PRIZE,
-        "name": "Art Work Exhibit"
+        "name": "Art Work Exhibit",
+        "style": LEGEND_PRESENT
     },
     {
         "lat": 40.626554283654315,
         "lng": -74.24678043595631,
         "image": "../assets/images/Legend_Present.png",
         "type": PRIZE,
-        "name": "Big Glasses Shop"
+        "name": "Big Glasses Shop",
+        "style": LEGEND_PRESENT
     },
     {
         "lat": 40.626407712005395,
         "lng": -74.24436644791314,
         "image": "../assets/images/Legend_Present.png",
         "type": PRIZE,
-        "name": "Paint Booth"
+        "name": "Paint Booth",
+        "style": LEGEND_PRESENT
     },
 
 
@@ -89,35 +107,40 @@ const markers = [
         "lng": -74.2466195034201,
         "image": "../assets/images/Legend_Info.png",
         "type": AMENITIES,
-        "name": "Information Desk"
+        "name": "Information Desk",
+        "style": LEGEND_INFO
     },
     {
         "lat": 40.625788850385774,
         "lng": -74.2451925682657,
         "image": "../assets/images/Legend_Can.png",
         "type": AMENITIES,
-        "name": "Box Office"
+        "name": "Box Office",
+        "style": LEGEND_CAN
     },
     {
         "lat": 40.624062521874976,
         "lng": -74.24720958938623,
         "image": "../assets/images/Legend_RestRoom.png",
         "type": AMENITIES,
-        "name": "Restrooms"
+        "name": "Restrooms",
+        "style": LEGEND_RESTROOM
     },
     {
         "lat": 40.62699399667107,
         "lng": -74.24495653387925,
         "image": "../assets/images/Legend_Medical.png",
         "type": AMENITIES,
-        "name": "First Aid Station"
+        "name": "First Aid Station",
+        "style": LEGEND_MEDICAL
     },
     {
         "lat": 40.62536541544722,
         "lng": -74.24759582747315,
         "image": "../assets/images/Legend_Garbage.png",
         "type": AMENITIES,
-        "name": "Garbage Station"
+        "name": "Garbage Station",
+        "style": LEGEND_GARBAGE
     }
 
 ];
@@ -293,23 +316,26 @@ function initMap() {
 
 function setupLegends() {
     markers.forEach(function(value, index, array){
-
+        let markerSize = new google.maps.Size(25, 25, 'pixels', 'pixels');
         if (value.lat) {
             let curMarker = new google.maps.Marker({
                                 position: {lat: value.lat, lng: value.lng},
                                 map,
-                                icon: value.image
+                                icon: value.image,
+                                size: markerSize
                             });
 
             loadedMarkers.push(value);
 
+            /*
             const infowindow = new google.maps.InfoWindow({
                 content: value.name,
             });
+            */
 
             curMarker.setTitle('' + (loadedMarkers.length -1 ));
             curMarker.addListener("click", () => {
-                infowindow.open(map, curMarker);
+                //infowindow.open(map, curMarker);
                 mapMarkerClicked(curMarker.getTitle());
         });
         }
@@ -325,42 +351,48 @@ $( function() {
     //<li><span>Test1</span></li>
 
     markers.forEach(function(value, index, array) {
+            let legend;
+            legend = $('<li class="' + value.style + '"><span data-name="' + value.name + '" data-icon="' + value.image + '">' + value.name + '</span></li>');
+
             if (value.type == AREAS) {
-                let legend = $('<li><span data-name="' + value.name + '">' + value.name + '</span></li>');
                 $('#legendsAreas').append(legend);
             }
 
             if (value.type == PRIZE) {
-                let legend = $('<li><span data-name="' + value.name + '">' + value.name + '</span></li>');
                 $('#legendsPrize').append(legend);
             }
 
             if (value.type == AMENITIES) {
-                let legend = $('<li><span data-name="' + value.name + '">' + value.name + '</span></li>');
                 $('#legendsAmenities').append(legend);
             }
         }
     );
 
     $('.legendsSection span').on('click',function(){
-        showDetailPopup(null);
+        //showDetailPopup({"image": $(this).attr("data-icon"), "name": this.attr("data=ma,e")});
+        showDetailPopup({"object": this});
     });
 
 
 });
 
-function showDetailPopup(index){
+function showDetailPopup(options){
 
     if ($('#detailPopup').css('opacity') == '0') {
         $('#detailPopup').css('opacity', '1').css('z-index', '99');
     }
 
-    let title;
+    let title, icon;
 
     try {
-        title = loadedMarkers[index].name;
-    } catch {
-        title = $(this).attr('data-name');
+        title = loadedMarkers[options.index].name;
+        icon = loadedMarkers[options.index].image;
+
+    } catch(err) {
+        try {
+            title = $(options.object).attr('data-name');
+            icon = $(options.object).attr('data-icon');
+        } catch(err) {}
     }
 
     let currentAcc = $('#accordion .active').attr('data-accordian');
@@ -374,8 +406,9 @@ function showDetailPopup(index){
     }
 
     $('#detailTitleText').text(title);
+    $('#detailIcon').attr('src', icon);
 }
 
 function mapMarkerClicked(index){
-    showDetailPopup(index);
+    showDetailPopup({"index": index});
 };
