@@ -4,10 +4,8 @@ $(document).ready(() => {
         location.href = "./index.html"
     });
 
-    $('.vewMap a').attr('href', './GoogleMaps/Maps.html');
+    $('.vewMap a').attr('href', './Maps.html');
 
     $('.vewSchedule a').attr('href', './EventsPage.html');
-
-
 
 })

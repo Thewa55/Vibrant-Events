@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="../jquery-ui-1.12.1.custom/jquery-ui.min.css">
-    <link rel="stylesheet" href="../GoogleMaps/Maps.css">
-    <script src="../jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
-    <script src="../jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-    <script src="Maps.js"></script>
-    <link rel="stylesheet" href="Accordion/accordion.css">
-    <link rel="stylesheet" href="../assets/css/Maps.css">
-    <script type="text/javascript" src="Accordion/pana-accordion.js"></script>
-    <script type="text/javascript" src="Overlay.js"></script>
-    <link rel="stylesheet" href="../assets/css/index.css" />
+    <link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.min.css">
+    <link rel="stylesheet" href="GoogleMaps/Maps.css">
+    <script src="jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+    <script src="jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+    <script src="GoogleMaps/Maps.js"></script>
+    <link rel="stylesheet" href="assets/Accordion/accordion.css">
+    <link rel="stylesheet" href="assets/css/Maps.css">
+    <script type="text/javascript" src="assets/Accordion/pana-accordion.js"></script>
+    <script type="text/javascript" src="assets/js/Overlay.js"></script>
+    <link rel="stylesheet" href="assets/css/index.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 </head>
 <style>
     html, body {
@@ -46,6 +47,7 @@
     .accordion{
         color:white;
         background-size: cover;
+        cursor: pointer;
     }
 
     .accordion1 {
@@ -134,7 +136,7 @@
 <body>
     <div class="main">
         <div class="headerBar" style="height:90px">
-            <img id="mainLogo" width="71" height="65" src="../assets/images/Logo.png" />
+            <img id="mainLogo" class="logo" width="71" height="65" src="assets/images/logo.png" />
             <span style="width:35px; height:10px; float:right;">
                 </span>
             <div class="menuItem vewMap">
@@ -230,6 +232,6 @@
 
         </div>
     </div>
-    <script src="../assets/js/events.js"></script>
+    <script src="assets/js/events.js"></script>
 </body>
 </html>
