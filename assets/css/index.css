@@ -1,16 +1,14 @@
-/* .hero {
-    background-image:
-    linear-gradient(
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)
-    ),url("../images/Holi.jpg");
+.hero {
+    background-image:url("../images/herobackground.jpg");
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
-    z-index: -1; 
-    height: fit-content;
-} */
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    opacity: .5;
+    height: 1011px !important;
+    width: 1536px !important;
+}
 .header {
   color: white;
 }
@@ -25,11 +23,6 @@
 p {
   color: silver;
 }
-<<<<<<< HEAD
-.d-block {
-  border-radius: 50%;
-}
-=======
 .nav-item {
   font-family: GillSans !important;
   font-size: 18px !important;
@@ -46,12 +39,10 @@ p {
 .jumbotron{
   background-color: #b63073;
   height: 487px;
-  background-image: url("../images/floral-2746540_1280.svg");
+  /* background-image: url("../images/floral-2746540_1280.svg"); */
 }
 .heroImg{
-  width: 362px;
-  height: 534px;
-  margin-top: -7vw;
+  background-position: center center;
 }
 .jumboTitle{
   width: 400px;
@@ -62,4 +53,3 @@ p {
   font-weight: bold;
   color: #ffffff;
 }
->>>>>>> 802132eaab1702db4defd8590ee756d443b28a11
