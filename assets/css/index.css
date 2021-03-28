@@ -73,6 +73,7 @@ body {
     border-bottom: 1px solid #129eaf;
     transition: border-bottom-color 0.50s ease;
 }
+
 .photoGallery,
 .photoGallery a:link,
 .photoGallery a:visited{
@@ -87,7 +88,7 @@ body {
 
 
 .nav-item {
-  font-family: GillSans !important;
+  /* font-family: GillSans !important; */
   font-size: 18px !important;
 }
 .navPhoto{
