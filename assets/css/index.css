@@ -15,10 +15,15 @@
 .logo {
     /* width: 5em; */
     opacity: 1;
+    left: 45px;
+    top: 13px;
+    position: absolute;
+    cursor: pointer;
 }
 body {
     background-color: white;
     font-family: 'Open Sans', GillSans, Arial;
+    margin: 0px;
 }
 p {
 }
@@ -45,7 +50,9 @@ p {
     height: 21px;
 }
 
-.vewMap, .vewMap a:link{
+.vewMap,
+.vewMap a:link,
+.vewMap a:visited{
     color: #b63073 !important;
 }
 
@@ -54,7 +61,9 @@ p {
     transition: border-bottom-color 0.50s ease;
 }
 
-.vewSchedule, .vewSchedule a:link {
+.vewSchedule,
+.vewSchedule a:link,
+.vewSchedule a:visited{
     color: #129eaf;
 }
 
@@ -62,7 +71,9 @@ p {
     border-bottom: 1px solid #129eaf;
     transition: border-bottom-color 0.50s ease;
 }
-.photoGallery, .photoGallery a:link {
+.photoGallery,
+.photoGallery a:link,
+.photoGallery a:visited{
     color: #5c379b;
 }
 
