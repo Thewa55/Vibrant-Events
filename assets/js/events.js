@@ -8,4 +8,7 @@ $(document).ready(() => {
 
     $('.vewSchedule a').attr('href', './EventsPage.html');
 
+    $('.eventSection').on("click", function(){
+        location.href = "./Maps.html";
+    });
 })
