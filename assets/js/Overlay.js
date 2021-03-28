@@ -340,8 +340,13 @@ $( function() {
     );
 
     $('.legendsSection span').on('click',function(){
+        /*
         if ($('#detailPopup').css('visibility') == 'hidden') {
             $('#detailPopup').css('visibility', 'visible');
+        }
+        */
+        if ($('#detailPopup').css('opacity') == '0') {
+            $('#detailPopup').css('opacity', '1').css('z-index', '99');
         }
 
         let currentAcc = $('#accordion .active').attr('data-accordian');
