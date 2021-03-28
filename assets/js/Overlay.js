@@ -11,15 +11,15 @@ const AMENITIES = "Amenities";
 
 const markers = [
     {
-        "lat": 40.6253422819969,
-        "lng": -74.24640370742502,
+        "lat": null,
+        "lng": null,
         "image": "../assets/images/Legend_Present.png",
         "type": AREAS,
         "name": "Main Stage"
     },
     {
-        "lat": 40.6273422819969,
-        "lng": -74.24940370742502,
+        "lat": null,
+        "lng": null,
         "image": "../assets/images/Legend_Present.png",
         "type": AREAS,
         "name": "Blue Stage"
@@ -62,67 +62,60 @@ const markers = [
 
 
     {
-        "lat": null,
-        "lng": null,
-        "image": null,
+        "lat": 40.6242009555238,
+        "lng": -74.24627618067619,
+        "image": "../assets/images/Legend_Present.png",
         "type": PRIZE,
         "name": "Art Work Exhibit"
     },
     {
-        "lat": null,
-        "lng": null,
-        "image": null,
+        "lat": 40.626554283654315,
+        "lng": -74.24678043595631,
+        "image": "../assets/images/Legend_Present.png",
         "type": PRIZE,
         "name": "Big Glasses Shop"
     },
     {
-        "lat": null,
-        "lng": null,
-        "image": null,
-        "type": PRIZE,
-        "name": "Paint Booth"
-    },
-    {
-        "lat": null,
-        "lng": null,
-        "image": null,
+        "lat": 40.626407712005395,
+        "lng": -74.24436644791314,
+        "image": "../assets/images/Legend_Present.png",
         "type": PRIZE,
         "name": "Paint Booth"
     },
 
 
     {
-        "lat": null,
-        "lng": null,
-        "image": null,
+        "lat": 40.624998979198935,
+        "lng": -74.2466195034201,
+        "image": "../assets/images/Legend_Info.png",
         "type": AMENITIES,
         "name": "Information Desk"
     },
     {
-        "lat": null,
-        "lng": null,
-        "image": null,
+        "lat": 40.625788850385774,
+        "lng": -74.2451925682657,
+        "image": "../assets/images/Legend_Can.png",
         "type": AMENITIES,
         "name": "Box Office"
     },
     {
-        "lat": null,
-        "lng": null,
-        "image": null,
+        "lat": 40.624062521874976,
+        "lng": -74.24720958938623,
+        "image": "../assets/images/Legend_RestRoom.png",
         "type": AMENITIES,
         "name": "Restrooms"
     },
     {
-        "lat": null,
-        "lng": null,
-        "image": null,
+        "lat": 40.62699399667107,
+        "lng": -74.24495653387925,
+        "image": "../assets/images/Legend_Medical.png",
         "type": AMENITIES,
         "name": "First Aid Station"
     },
     {
-        "lat": null,
-        "lng": null,
-        "image": null,
+        "lat": 40.62536541544722,
+        "lng": -74.24759582747315,
+        "image": "../assets/images/Legend_Garbage.png",
         "type": AMENITIES,
         "name": "Garbage Station"
     }
@@ -302,13 +295,23 @@ function setupLegends() {
     markers.forEach(function(value, index, array){
 
         if (value.lat) {
-            loadedMarkers.push(
-                new google.maps.Marker({
-                    position: {lat: value.lat, lng: value.lng},
-                    map,
-                    icon: value.image
-                })
-            );
+            let curMarker = new google.maps.Marker({
+                                position: {lat: value.lat, lng: value.lng},
+                                map,
+                                icon: value.image
+                            });
+
+            loadedMarkers.push(curMarker);
+
+            const infowindow = new google.maps.InfoWindow({
+                content: value.name,
+            });
+
+            curMarker.setTitle(loadedMarkers.length);
+            curMarker.addListener("click", () => {
+                infowindow.open(map, curMarker);
+                mapMarkerClicked(curMarker.getTitle());
+        });
         }
     });
 
@@ -340,11 +343,6 @@ $( function() {
     );
 
     $('.legendsSection span').on('click',function(){
-        /*
-        if ($('#detailPopup').css('visibility') == 'hidden') {
-            $('#detailPopup').css('visibility', 'visible');
-        }
-        */
         if ($('#detailPopup').css('opacity') == '0') {
             $('#detailPopup').css('opacity', '1').css('z-index', '99');
         }
@@ -362,5 +360,10 @@ $( function() {
         $('#detailTitleText').text( $(this).attr('data-name'));
     });
 
+
 });
 
+
+function mapMarkerClicked(index){
+    console.log('test' + index);
+};
