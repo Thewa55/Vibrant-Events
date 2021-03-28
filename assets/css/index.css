@@ -3,15 +3,13 @@
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: auto 100%;
+    background-size: cover;
     background-repeat: no-repeat;
     /* opacity: .75; */
     /* height: 960px !important;
     width: 100% !important; */
 }
-.inputCol{
-  margin-top: 150px !important;
-}
+
 .header {
   color: white;
 }
@@ -123,7 +121,7 @@ body {
   height: 36px;
   margin-top: 2em;
   margin-bottom: 2em;
-  margin-right: 2em;
+  align-items: flex-end;
 }
 .instaIcon{
   height: 36px;
@@ -140,12 +138,6 @@ body {
   font-size: 27px;
   font-weight: 600;
 }
-
-.hero2 {
-  height: 960px !important;
-  width: 1536px !important;
-}
-
 .events{
   margin: 100px 99px 18px 43px;
   padding: 16px 200px 15px 24px;
