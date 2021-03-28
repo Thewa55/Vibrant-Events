@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.min.css">
-    <link rel="stylesheet" href="GoogleMaps/Maps.css">
     <script src="jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
     <script src="jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
     <script src="GoogleMaps/Maps.js"></script>
@@ -131,6 +130,102 @@
     }
 
 
+    .mapSplit {
+        display: inline;
+    }
+
+    #accordion.fullAccordion {
+        height: 100%;
+    }
+
+
+    #accordion div {
+        height: 100%;
+    }
+
+
+    #map {
+        height: 50%;
+    }
+
+    .legendsWrapper {
+        width: 100%;
+    }
+
+    .legendsSection {
+        width: 20em;
+        float: left;
+        padding: 40px;
+    }
+
+    .legendsSection ul {
+        padding-inline-start: 0px;
+
+    }
+
+    .legendsSection li {
+        list-style: none;
+        padding-bottom: 12px;
+    }
+
+    .legendsSection li span {
+        position: relative;
+        left: 15px;
+        top: -6px;
+        cursor: pointer;
+    }
+
+    .legendsSection li::before {
+        content: '';
+        display: inline-block;
+        height: 25px;
+        width: 25px;
+        background-image: url('assets/images/Legend_Garbage.png');
+        background-position: bottom;
+    }
+
+
+    .legendsSection {
+        color: #525252;
+
+    }
+
+    .legendTitle {
+        color: #525252;
+        width: 150px;
+        font-size: 18px;
+        font-weight: 600;
+        padding-right: 50px;
+        border-bottom: 1px solid #525252;
+    }
+
+    #detailPopup {
+        color: #525252;
+        z-index: 10;
+        position: absolute;
+        /* top: 350px; */
+        top: 350px;
+        left:0px;
+        background-color: white;
+        height: 700px;
+        width: 260px;
+        padding: 20px;
+        visibility: hidden;
+
+    }
+
+    .detailPopupText {
+        clear: left;
+    }
+
+    .detailPopupTitle {
+        padding-bottom: 50px;
+        font-size: 21px;
+    }
+
+    .detailPopupTitle img{
+        padding-right: 10px;
+    }
 
 </style>
 <body>
@@ -217,19 +312,52 @@
                         </div>
                     </td>
                     <td style="width: auto; vertical-align: top;">
-                        <div style="height:100%;" id="MapWrapper">
-                            <div id="map"></div>
-                            <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
-                            <script
-                                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFMM4Aij-764bPjnAoC861OqvbH_-R1bs&callback=initMap&libraries=&v=weekly"
-                                    async
-                            ></script>
-                        </div>
+                            <div  id="MapWrapper" style="height: 50%;">
+                                <div id="map" style="height: 100%;"></div>
+                                <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+                                <script
+                                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFMM4Aij-764bPjnAoC861OqvbH_-R1bs&callback=initMap&libraries=&v=weekly"
+                                        async
+                                ></script>
+                            </div>
+                            <div class="legendsWrapper" >
+                                <div class="legendsSection">
+                                    <div class="legendTitle">Areas</div>
+                                    <ul id="legendsAreas">
+                                    </ul>
+                                </div>
+
+                                <div class="legendsSection"  >
+                                    <div class="legendTitle">Prize Locations</div>
+                                    <ul id="legendsPrize">
+                                    </ul>
+                                </div>
+
+                                <div class="legendsSection" >
+                                    <div class="legendTitle">Amenities</div>
+                                    <ul id="legendsAmenities">
+                                    </ul>
+                                </div>
+                            </div>
+
                     </td>
                 </tr>
             </table>
 
 
+        </div>
+    </div>
+
+    <div id="detailPopup">
+        <div>
+            <img width="100%" src="assets/images/EventsImage2.jpg" />
+        </div>
+        <div class="detailPopupTitle">
+            <img style="height: 25px; width: 25px; float:left;">
+            <div style="float:left;" id="detailTitleText">Art Exhibit Prize Pack</div>
+        </div>
+        <div class="detailPopupText" >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec ante fermentum, volutpat dolor eget, sodales odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis odio eu nisi rutrum consequat. Donec ut nunc augue. Aliquam erat volutpat. Suspendisse in sem non nulla accumsan lacinia quis eu turpis. Curabitur non ligula nisi. Maecenas magna ligula, sodales vitae maximus vel, faucibus et arcu. Duis id enim tortor. Nam non urna in sapien pretium iaculis at vel libero. Fusce massa ante, ornare in elit vel, bibendum laoreet risus. Donec commodo mauris id libero consectetur pellentesque. Fusce at ante nunc. Sed condimentum finibus finibus.
         </div>
     </div>
     <script src="assets/js/events.js"></script>

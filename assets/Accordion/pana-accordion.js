@@ -33,6 +33,7 @@ var accordion= {
 				that.clearAnimate();
 			}
 			that.active(options,$(this));
+			$('#detailPopup').css('visibility', 'hidden');
 		});
 		/*
 		$items.on("mouseover",function(){

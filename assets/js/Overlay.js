@@ -5,17 +5,128 @@
 let map, infoWindow;
 let loadedMarkers = [];
 
+const AREAS = "Areas";
+const PRIZE = "Prize";
+const AMENITIES = "Amenities";
+
 const markers = [
     {
         "lat": 40.6253422819969,
         "lng": -74.24640370742502,
-        "image": "../assets/images/Legend_Present.png"
+        "image": "../assets/images/Legend_Present.png",
+        "type": AREAS,
+        "name": "Main Stage"
     },
     {
         "lat": 40.6273422819969,
         "lng": -74.24940370742502,
-        "image": "../assets/images/Legend_Present.png"
+        "image": "../assets/images/Legend_Present.png",
+        "type": AREAS,
+        "name": "Blue Stage"
+    },
+    {
+        "lat": null,
+        "lng": null,
+        "image": null,
+        "type": AREAS,
+        "name": "Pink Stage"
+    },
+    {
+        "lat": null,
+        "lng": null,
+        "image": null,
+        "type": AREAS,
+        "name": "Booths/Exibits"
+    },
+    {
+        "lat": null,
+        "lng": null,
+        "image": null,
+        "type": AREAS,
+        "name": "Food/Beverage"
+    },
+    {
+        "lat": null,
+        "lng": null,
+        "image": null,
+        "type": AREAS,
+        "name": "Parking"
+    },
+    {
+        "lat": null,
+        "lng": null,
+        "image": null,
+        "type": AREAS,
+        "name": "Smoking Area"
+    },
+
+
+    {
+        "lat": null,
+        "lng": null,
+        "image": null,
+        "type": PRIZE,
+        "name": "Art Work Exhibit"
+    },
+    {
+        "lat": null,
+        "lng": null,
+        "image": null,
+        "type": PRIZE,
+        "name": "Big Glasses Shop"
+    },
+    {
+        "lat": null,
+        "lng": null,
+        "image": null,
+        "type": PRIZE,
+        "name": "Paint Booth"
+    },
+    {
+        "lat": null,
+        "lng": null,
+        "image": null,
+        "type": PRIZE,
+        "name": "Paint Booth"
+    },
+
+
+    {
+        "lat": null,
+        "lng": null,
+        "image": null,
+        "type": AMENITIES,
+        "name": "Information Desk"
+    },
+    {
+        "lat": null,
+        "lng": null,
+        "image": null,
+        "type": AMENITIES,
+        "name": "Box Office"
+    },
+    {
+        "lat": null,
+        "lng": null,
+        "image": null,
+        "type": AMENITIES,
+        "name": "Restrooms"
+    },
+    {
+        "lat": null,
+        "lng": null,
+        "image": null,
+        "type": AMENITIES,
+        "name": "First Aid Station"
+    },
+    {
+        "lat": null,
+        "lng": null,
+        "image": null,
+        "type": AMENITIES,
+        "name": "Garbage Station"
     }
+
 ];
 
 function initMap() {
@@ -189,13 +300,62 @@ function initMap() {
 
 function setupLegends() {
     markers.forEach(function(value, index, array){
-        loadedMarkers.push(
-            new google.maps.Marker({
-                position: { lat: value.lat, lng: value.lng },
-                map,
-                icon: value.image
-            })
-        );
+
+        if (value.lat) {
+            loadedMarkers.push(
+                new google.maps.Marker({
+                    position: {lat: value.lat, lng: value.lng},
+                    map,
+                    icon: value.image
+                })
+            );
+        }
     });
 
 }
+
+$( function() {
+    accordion.init({
+        id: 'accordion'
+    });
+
+    //<li><span>Test1</span></li>
+
+    markers.forEach(function(value, index, array) {
+            if (value.type == AREAS) {
+                let legend = $('<li><span data-name="' + value.name + '">' + value.name + '</span></li>');
+                $('#legendsAreas').append(legend);
+            }
+
+            if (value.type == PRIZE) {
+                let legend = $('<li><span data-name="' + value.name + '">' + value.name + '</span></li>');
+                $('#legendsPrize').append(legend);
+            }
+
+            if (value.type == AMENITIES) {
+                let legend = $('<li><span data-name="' + value.name + '">' + value.name + '</span></li>');
+                $('#legendsAmenities').append(legend);
+            }
+        }
+    );
+
+    $('.legendsSection span').on('click',function(){
+        if ($('#detailPopup').css('visibility') == 'hidden') {
+            $('#detailPopup').css('visibility', 'visible');
+        }
+
+        let currentAcc = $('#accordion .active').attr('data-accordian');
+
+        if (currentAcc == 1) {
+            $('#detailPopup').css('left', '0px');
+        } else if (currentAcc == 2) {
+            $('#detailPopup').css('left', '40px');
+        } else {
+            $('#detailPopup').css('left', '80px');
+        }
+
+        $('#detailTitleText').text( $(this).attr('data-name'));
+    });
+
+});
+
