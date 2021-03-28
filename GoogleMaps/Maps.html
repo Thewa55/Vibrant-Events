@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../jquery-ui-1.12.1.custom/jquery-ui.min.css">
+    <link rel="stylesheet" href="../GoogleMaps/Maps.css">
+    <script src="../jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+    <script src="../jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+    <script src="Maps.js"></script>
+    <link rel="stylesheet" href="Accordion/accordion.css">
+    <link rel="stylesheet" href="../assets/css/Maps.css">
+    <script type="text/javascript" src="Accordion/pana-accordion.js"></script>
+    <script type="text/javascript" src="Overlay.js"></script>
+</head>
+<body>
+    <table style="width:100%; height:100%;">
+        <tr style="height:100%;">
+            <td style="width: 40%; height:100%;">
+                <div class="pana-accordion fullAccordion" id="accordion">
+                    <div class="pana-accordion-wrap" >
+                        <div class="pana-accordion-item" style="color:white; background-color: #F44336; background-size: cover; background-image: url('https://unsplash.it/500/300?image=57');" data-accordian="1">
+                            <h1 class="locationHeader"> Linden, NJ</h1>
+                            <div style="margin-left: 3em;">
+                            <h1 style="color: white; z-index: 1">Holi Celebration in Linden, NJ</h1>
+                            <div><span style="font-weight: bold; font-size:.75em">Linden, NJ</span> <br/><br/>Come join us in Linden, NJ on the weeekend of March 28 for the celebration of colors. Everyone of color, race and gender are invited to this family event. It will be a colorful time.</div>
+                            </div>
+                        </div>
+                        <div class="pana-accordion-item" style="background-color: #2196F3; background-size: cover; background-image: url('https://unsplash.it/500/300?image=58')"  data-accordian="2">
+                            <!-- <img height="100%" src="https://unsplash.it/500/300?image=49" />-->
+                            <h1 class="locationHeader"> Edison, NJ</h1>
+                        </div> 
+                        <div class="pana-accordion-item" style="background-color: #4CAF50; background-size: cover; background-image: url('https://unsplash.it/500/300?image=59')"  data-accordian="3">
+                            <!-- <img height="100%" src="https://unsplash.it/500/300?image=39" /> -->
+                            <h1 class="locationHeader" style="z-index: 1;"> Woodbridge, NJ</h1>
+                        </div>
+                        <!-- <div class="pana-accordion-item" style="background-color: #FF9800"><img height="100%" src="https://unsplash.it/500/300?image=29" /></div> -->
+                    </div>
+                </div>
+            </td>
+            <td style="width: 70%; vertical-align: top;">
+                <div style="height:100%;" id="MapWrapper">
+                    <div id="map"></div>
+                    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+                    <script
+                            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFMM4Aij-764bPjnAoC861OqvbH_-R1bs&callback=initMap&libraries=&v=weekly"
+                            async
+                    ></script>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
