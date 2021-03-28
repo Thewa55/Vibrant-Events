@@ -301,13 +301,13 @@ function setupLegends() {
                                 icon: value.image
                             });
 
-            loadedMarkers.push(curMarker);
+            loadedMarkers.push(value);
 
             const infowindow = new google.maps.InfoWindow({
                 content: value.name,
             });
 
-            curMarker.setTitle(loadedMarkers.length);
+            curMarker.setTitle('' + (loadedMarkers.length -1 ));
             curMarker.addListener("click", () => {
                 infowindow.open(map, curMarker);
                 mapMarkerClicked(curMarker.getTitle());
@@ -343,27 +343,39 @@ $( function() {
     );
 
     $('.legendsSection span').on('click',function(){
-        if ($('#detailPopup').css('opacity') == '0') {
-            $('#detailPopup').css('opacity', '1').css('z-index', '99');
-        }
-
-        let currentAcc = $('#accordion .active').attr('data-accordian');
-
-        if (currentAcc == 1) {
-            $('#detailPopup').css('left', '0px');
-        } else if (currentAcc == 2) {
-            $('#detailPopup').css('left', '40px');
-        } else {
-            $('#detailPopup').css('left', '80px');
-        }
-
-        $('#detailTitleText').text( $(this).attr('data-name'));
+        showDetailPopup(null);
     });
 
 
 });
 
+function showDetailPopup(index){
+
+    if ($('#detailPopup').css('opacity') == '0') {
+        $('#detailPopup').css('opacity', '1').css('z-index', '99');
+    }
+
+    let title;
+
+    try {
+        title = loadedMarkers[index].name;
+    } catch {
+        title = $(this).attr('data-name');
+    }
+
+    let currentAcc = $('#accordion .active').attr('data-accordian');
+
+    if (currentAcc == 1) {
+        $('#detailPopup').css('left', '0px');
+    } else if (currentAcc == 2) {
+        $('#detailPopup').css('left', '40px');
+    } else {
+        $('#detailPopup').css('left', '80px');
+    }
+
+    $('#detailTitleText').text(title);
+}
 
 function mapMarkerClicked(index){
-    console.log('test' + index);
+    showDetailPopup(index);
 };
