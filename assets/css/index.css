@@ -21,7 +21,6 @@ body {
     font-family: 'Open Sans', GillSans, Arial;
 }
 p {
-  color: silver;
 }
 
 
@@ -46,8 +45,8 @@ p {
     height: 21px;
 }
 
-.vewMap {
-    color: #b63073;
+.vewMap, .vewMap a:link{
+    color: #b63073 !important;
 }
 
 .vewMap a:hover {
@@ -55,7 +54,7 @@ p {
     transition: border-bottom-color 0.50s ease;
 }
 
-.vewSchedule {
+.vewSchedule, .vewSchedule a:link {
     color: #129eaf;
 }
 
@@ -63,7 +62,7 @@ p {
     border-bottom: 1px solid #129eaf;
     transition: border-bottom-color 0.50s ease;
 }
-.photoGallery {
+.photoGallery, .photoGallery a:link {
     color: #5c379b;
 }
 

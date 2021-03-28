@@ -6,36 +6,11 @@
     height: 100%;
 }
 
-#accordion  div {
+
+#accordion div {
     height: 100%;
 }
 
-table {
-    background-color: black;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    border: none;
-    padding: none;
-    border-collapse: collapse;
-    border-spacing: 0px;
-}
-
-tr {
-    height: 100%;
-    padding: none;
-    border-image-width: 0px;
-
-}
-
-td {
-    height: 100%;
-    padding: none;
-    border: 0px;
-    border-image-width: 0px;
-}
 
 #map {
     height: 50%;
