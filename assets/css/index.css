@@ -112,7 +112,6 @@ body {
   width: 400px;
   height: 35px;
   margin: 0 80px 92px 0;
-  font-family: GillSans;
   font-size: 30px;
   font-weight: bold;
   color: #ffffff;
@@ -135,7 +134,7 @@ body {
   color: #ffffff;
   width: 100px;
   height: 48px;
-  font-family: OpenSans;
+  /* font-family: OpenSans; */
   font-size: 18px;
   font-weight: 600;
   font-stretch: normal;
@@ -150,7 +149,7 @@ body {
   background-color: #b63073;
   width: 83%;
   color: white;
-  font-family: OpenSans;
+  /* font-family: OpenSans; */
   font-size: 18px;
 }
 .past{
@@ -159,7 +158,7 @@ body {
   background-color: #55338e;
   width: 83%;
   color: white;
-  font-family: OpenSans;
+  /* font-family: OpenSans; */
   font-size: 18px;
 }
 .photoGallery{
@@ -168,11 +167,9 @@ body {
   background-color: #129eaf;
   width: 83%;
   color: white;
-  font-family: OpenSans;
   font-size: 18px;
 }
 .upcoming{
-  font-family: OpenSans;
   font-size: 18px;
   font-weight: 600;
   color: #555555;
@@ -182,7 +179,6 @@ body {
   width:63px;
 }
 .eventTitle {
-  font-family: OpenSans;
   font-size: 20px;
   font-weight: 600;
   font-stretch: normal;
@@ -194,7 +190,6 @@ body {
 .timeLoc{
   font-weight: normal;
   color: #555555;
-  font-family: OpenSans;
   font-size: 18px;
   font-weight: 600;
 }
@@ -208,7 +203,6 @@ body {
   color: #555555;
 }
 .card-title{
-  font-family: OpenSans;
   font-size: 36px;
   font-weight: bold;
   font-stretch: normal;
