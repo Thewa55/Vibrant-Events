@@ -1,43 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/index.css" />
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <style>
     body {
         font-family: 'Open Sans', GillSans, Arial;
     }
 
-    .logo {
+    #mainLogo {
         position: absolute;
         top: 13px;
-        left: 23px;
-        background-color: black;
-    }
-
-    .menuItem {
-        float: right;
-        vertical-align: middle;
-        line-height: 90px;
-        padding-right: 10px;
-        padding-left: 20px;
-        font-size: 18px;
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        letter-spacing: normal;
-        text-align: right;
-        height: 21px;
-    }
-
-    .vewMap {
-        color: #b63073;
-    }
-
-    .vewSchedule {
-        color: #129eaf;
-    }
-
-    .photoGallery {
-        color: #5c379b;
+        left: 12px;
+        cursor: pointer;
+        /* background-color: black; */
     }
 
     .headerBanner {
@@ -47,11 +23,13 @@
         background-position: 162px center;
 
         margin-right: 43px;
+        padding-right: 38px;
         position: relative;
         top: 0px;
         height:487px;
         color: white;
         padding-left: 442px;
+        min-width: 600px;
     }
 
     .headerBanner h1 {
@@ -92,7 +70,8 @@
     }
 
     .eventSection {
-        width: 33%;
+        padding-right: 10px;
+        width: 380px;
         min-width: 300px;
         text-align:left;
     }
@@ -100,6 +79,8 @@
     .eventContent {
         width: 300px;
         height: 100%;
+        display:flex;
+        flex-direction: column;
     }
 
     .eventSection img {
@@ -112,17 +93,78 @@
         font-weight: 600;
     }
 
+    .eventDetail {
+        flex: 1 1 auto;
+    }
+
+    .footer {
+        height: 70px;
+    }
+
+    .EventHeader {
+        margin-bottom: 50px;
+    }
+
+
+
+
+    .eventButtonWrap {
+        flex: 0 1 auto;
+        margin-left: 0px;
+    }
+
     .eventButton {
         width: 164px;
         height: 46px;
-        margin: 50px 174px 0 42px;
         padding: 12px 45px 12px 44px;
         background-color: #129eaf;
         color: #ffffff;
         font-weight: 600;
         font-size: 18px;
         border: none;
+        text-align: left;
     }
+
+    .eventButton:active {
+        border: none;
+    }
+    .eventButton {
+        border: none;
+        padding: 16px 42px;
+        box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
+        line-height: 1.25;
+        /* background: #FC6E51; */
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        position: relative;
+        transition: background-color 0.6s ease;
+        overflow: hidden;
+    }
+    .eventButton:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        top: 50%;
+        left: 50%;
+        transform-style: flat;
+        transform: translate3d(-50%, -50%, 0);
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 100%;
+        transition: width 0.3s ease, height 0.3s ease;
+    }
+    .eventButton:focus, .button:hover {
+        background: #129eaf;
+    }
+    .eventButton:active:after {
+        width: 200px;
+        height: 200px;
+    }
+
+
 
 </style>
 <head>
@@ -130,16 +172,18 @@
 </head>
 <body>
     <div style="height:90px">
-        <img class="logo" width="71" height="65" />
-        <span class="menuItem vewMap">
-            <a>VIEW MAP</a>
+        <img class="logo" id="mainLogo" width="71" height="65" src="assets/images/Logo.png" />
+        <span style="width:35px; height:10px; float:right;">
         </span>
-            <span class="menuItem vewSchedule">
-            <a>VIEW SCHEDULE</a>
-        </span>
-            <span class="menuItem photoGallery">
-            <a>PHOTO GALLERY</a>
-        </span>
+        <div class="menuItem vewMap">
+            <a id="viewMapMenu">VIEW MAP</a>
+        </div>
+        <div class="menuItem vewSchedule">
+            <a id="viewScheduleMenu">VIEW SCHEDULE</a>
+        </div>
+        <div class="menuItem photoGallery">
+            <a id="photoGalleryMenu">PHOTO GALLERY</a>
+        </div>
     </div>
     <div style="height:534px;">
         <div class="headerBanner" >
@@ -153,41 +197,48 @@
     </div>
 
     <div class="eventSchedule">
-        <h1>2021 Event Schedule</h1>
+        <h1 class="EventHeader">2021 Event Schedule</h1>
 
         <div class="eventGroup">
             <div class="eventSection">
                 <div class="eventContent">
-                    <img src="assets/images/EventsImage.jpg" />
-                    <h2>First Title of Event Area</h2>
-                    <p>Edison, NJ</p>
-                    <span>Saturday, March 27 2021<br>10:00am to 10:00pm</span>
-                    <br />
-                    <br />
+                    <div class="eventDetail">
+                        <img src="assets/images/EventsImage.jpg" />
+                        <h2>First Title of Event Area</h2>
+                        <p>Edison, NJ</p>
+                        <span>Saturday, March 27 2021<br>10:00am to 10:00pm</span>
+                    </div>
                     <button class="eventButton" >DETAILS</button>
                 </div>
             </div>
             <div class="eventSection">
                 <div class="eventContent">
-                    <img src="assets/images/EventsImage2.jpg" />
-                    <h2>Second Title of Event Area</h2>
-                    <p>Linden, NJ</p>
-                    <span>Saturday, March 27 2021<br>10:00am to 10:00pm</span>
-                    <br />
-                    <br />
+                    <div class="eventDetail">
+                        <img src="assets/images/EventsImage2.jpg" />
+                        <h2>Second Title of Event Area</h2>
+                        <p>Linden, NJ</p>
+                        <span>Saturday, March 27 2021<br>10:00am to 10:00pm</span>
+                    </div>
                     <button class="eventButton" >DETAILS</button>
                 </div>
             </div>
             <div class="eventSection">
                 <div class="eventContent">
-                    <img src="assets/images/EventsImage3.jpg" />
-                    <h2>Third Title of Event Area</h2>
-                    <p>Woodbridge, NJ</p>
-                    <span>Saturday, March 27 2021<br>10:00am to 10:00pm</span>
-                    <button class="eventButton" >DETAILS</button>
+                    <div class="eventDetail">
+                        <img src="assets/images/EventsImage3.jpg" />
+                        <h2>Third Title of Event Area</h2>
+                        <p>Woodbridge, NJ</p>
+                        <span>Saturday, March 27 2021<br>10:00am to 10:00pm</span>
+
+                    </div>
+                    <div class="eventButtonWrap">
+                        <button class="eventButton" >DETAILS</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="footer" />
+    <script src="./assets/js/events.js"></script>
 </body>
 </html>
